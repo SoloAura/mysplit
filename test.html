@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך מקיף למאמן כושר - מכון וינגייט</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        nav {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-right: 5px solid #667eea;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .important {
+            background: #fff3cd;
+            border-right: 5px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border-right: 5px solid #dc3545;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border-right: 5px solid #17a2b8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 40px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .card h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏋️ מדריך מקיף למאמן כושר</h1>
+            <p class="subtitle">מבוסס על חומרי לימוד ממכון וינגייט</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#bones">מערכת השלד</a></li>
+                <li><a href="#cartilage">סחוסים</a></li>
+                <li><a href="#joints">מפרקים</a></li>
+                <li><a href="#muscles">מערכת השרירים</a></li>
+                <li><a href="#planes">מישורי תנועה</a></li>
+                <li><a href="#upper-limb">גף עליון</a></li>
+                <li><a href="#lower-limb">גף תחתון</a></li>
+                <li><a href="#spine">עמוד השדרה</a></li>
+                <li><a href="#exercise">פעילות גופנית</a></li>
+            </ul>
+        </nav>
+
+        <!-- מערכת השלד -->
+        <section id="bones" class="section">
+            <h2>🦴 מערכת השלד - Skeletal System</h2>
+            
+            <div class="highlight-box">
+                <h3>מבוא למערכת השלד</h3>
+                <p><strong>למבוגר יש 206 עצמות</strong>, לתינוק יש כ-270 עצמות שחלקן מתמזגות עם הגיל.</p>
+            </div>
+
+            <h3>תפקידי מערכת השלד</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>תמיכה ונשיאת משקל</h4>
+                    <p>העצמות מספקות מבנה קשיח לגוף ונושאות את משקל הגוף</p>
+                </div>
+                <div class="card">
+                    <h4>הגנה</h4>
+                    <p>העצמות מגינות על איברים חיוניים (גולגולת על המוח, צלעות על הלב והריאות)</p>
+                </div>
+                <div class="card">
+                    <h4>תנועה</h4>
+                    <p>העצמות משמשות כמנופים שאליהם נצמדים השרירים</p>
+                </div>
+                <div class="card">
+                    <h4>אחסון מינרלים</h4>
+                    <p>העצם משמשת מאגר לסידן (Ca) ופוספט</p>
+                </div>
+                <div class="card">
+                    <h4>ייצור תאי דם</h4>
+                    <p>מח העצם מייצר תאי דם אדומים ולבנים</p>
+                </div>
+            </div>
+
+            <h3>חלוקת השלד</h3>
+            
+            <h4>שלד הציר - Axial Skeleton</h4>
+            <p>כולל 80 עצמות המהוות את ציר הגוף:</p>
+            <ul>
+                <li><strong>גולגולת (Skull)</strong> - 22 עצמות</li>
+                <li><strong>עמוד השדרה (Vertebral Column)</strong> - 33 חוליות (7 צוואריות, 12 חזה, 5 מותניות, 5 סקרום, 4 קוקסיקס)</li>
+                <li><strong>כלוב בית החזה (Thorax)</strong> - 24 צלעות + עצם החזה (Sternum)</li>
+            </ul>
+
+            <h4>שלד התוספת - Appendicular Skeleton</h4>
+            <p>כולל 126 עצמות של הגפיים וחגורות הכתפיים והאגן:</p>
+            <ul>
+                <li><strong>חגורת הכתפיים</strong> - עצמות הבריח (Clavicle) והשכמה (Scapula)</li>
+                <li><strong>גפיים עליונות</strong> - זרוע (Humerus), אמה (Radius + Ulna), כף יד</li>
+                <li><strong>חגורת האגן</strong> - עצמות האגן (Pelvis)</li>
+                <li><strong>גפיים תחתונות</strong> - ירך (Femur), שוק (Tibia + Fibula), כף רגל</li>
+            </ul>
+
+            <h3>סוגי עצמות</h3>
+            <table>
+                <tr>
+                    <th>סוג העצם</th>
+                    <th>תיאור</th>
+                    <th>דוגמאות</th>
+                </tr>
+                <tr>
+                    <td><strong>עצמות ארוכות (Long Bones)</strong></td>
+                    <td>עצמות עם גוף ארוך ושני קצוות</td>
+                    <td>Femur (עצם הירך), Humerus (עצם הזרוע), Radius, Tibia</td>
+                </tr>
+                <tr>
+                    <td><strong>עצמות קצרות (Short Bones)</strong></td>
+                    <td>עצמות קוביות בגודל דומה בכל הממדים</td>
+                    <td>עצמות שורש כף היד (Carpals), עצמות שורש כף הרגל (Tarsals)</td>
+                </tr>
+                <tr>
+                    <td><strong>עצמות שטוחות (Flat Bones)</strong></td>
+                    <td>עצמות דקות ושטוחות</td>
+                    <td>צלעות (Ribs), עצם החזה (Sternum), שכמה (Scapula), גולגולת</td>
+                </tr>
+                <tr>
+                    <td><strong>עצמות לא סדירות (Irregular Bones)</strong></td>
+                    <td>עצמות ללא צורה מוגדרת</td>
+                    <td>חוליות (Vertebrae), עצמות הפנים</td>
+                </tr>
+                <tr>
+                    <td><strong>עצמות ססמואידיות (Sesamoid Bones)</strong></td>
+                    <td>עצמות קטנות הטמונות בגידים</td>
+                    <td>פיקה (Patella)</td>
+                </tr>
+            </table>
+
+            <h3>מבנה העצם הארוכה</h3>
+            
+            <div class="highlight-box">
+                <h4>חלקי העצם הארוכה</h4>
+                <ul>
+                    <li><strong>אפיפיזה (Epiphysis)</strong> - קצה העצם. יש אפיפיזה פרוקסימלית (Proximal) ואפיפיזה דיסטלית (Distal)</li>
+                    <li><strong>דיאפיזה (Diaphysis/Shaft)</strong> - גוף העצם, החלק הארוך והצר</li>
+                    <li><strong>מטאפיזה (Metaphysis)</strong> - האזור שבין האפיפיזה לדיאפיזה</li>
+                    <li><strong>מדולה (Medulla)</strong> - חלל העצם המכיל מח עצם</li>
+                </ul>
+            </div>
+
+            <h4>שכבות העצם</h4>
+            <ul>
+                <li><strong>Periosteum (פריאוסטיאום)</strong> - רקמת חיבור העוטפת את העצם מבחוץ</li>
+                <li><strong>Compact Bone (עצם דחוסה/קומפקטית)</strong> - שכבה חיצונית קשה וצפופה</li>
+                <li><strong>Spongy Bone (עצם ספוגית/טרבקולרית)</strong> - עצם פנימית בעלת מבנה דמוי ספוג</li>
+                <li><strong>Articular Cartilage (סחוס המפרק)</strong> - סחוס היאליני המכסה את קצות העצמות במפרק</li>
+            </ul>
+
+            <h3>תאי העצם</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Osteoblast (אוסטאובלסט)</h4>
+                    <p><strong>תא בונה עצם</strong> - מייצר רקמת עצם חדשה על ידי הפרשת קולגן ומינרלים</p>
+                </div>
+                <div class="card">
+                    <h4>Osteoclast (אוסטאוקלסט)</h4>
+                    <p><strong>תא מפרק/הורס עצם</strong> - שובר ומפרק רקמת עצם ישנה</p>
+                </div>
+                <div class="card">
+                    <h4>Osteocyte (אוסטאוציט)</h4>
+                    <p><strong>תא עצם בוגר</strong> - שומר ומתחזק את רקמת העצם הקיימת</p>
+                </div>
+            </div>
+
+            <div class="important">
+                <h4>⚖️ איזון בניה והרס</h4>
+                <p>העצם נמצאת בתהליך מתמיד של בניה והרס (Remodeling). האוסטאובלסטים בונים עצם חדשה והאוסטאוקלסטים מפרקים עצם ישנה. איזון תקין בין התהליכים חיוני לבריאות העצם.</p>
+            </div>
+
+            <h3>חוק וולף - Wolff's Law</h3>
+            <div class="highlight-box">
+                <p><strong>עקרון יסוד:</strong> עצם נבנית, מצטפפת ומתחזקת בהתאם לעומסים המכניים הפועלים עליה.</p>
+                <p><strong>המשמעות:</strong> פעילות גופנית והעמסה על העצמות מחזקת אותן, בעוד חוסר פעילות מחליש אותן.</p>
+                <p><strong>דוגמה:</strong> ספורטאים בענפי כוח או ריצה יפתחו עצמות צפופות וחזקות יותר באזורים הנתונים להעמסה.</p>
+            </div>
+
+            <h3>פתולוגיות עצם</h3>
+            
+            <h4>אוסטאופניה (Osteopenia)</h4>
+            <div class="info">
+                <p><strong>הגדרה:</strong> ירידה מתונה בצפיפות העצם</p>
+                <p><strong>T-Score:</strong> בין -1 ל--2.5</p>
+                <p><strong>משמעות:</strong> שלב ביניים לפני אוסטאופורוזיס, ניתן לטיפול ולשיפור</p>
+            </div>
+
+            <h4>אוסטאופורוזיס (Osteoporosis)</h4>
+            <div class="warning">
+                <p><strong>הגדרה:</strong> מחלת עצם המאופיינת בירידה משמעותית בצפיפות וחוזק העצם</p>
+                <p><strong>T-Score:</strong> -2.5 ומטה</p>
+                <p><strong>תוצאות:</strong> העצמות הופכות שבריריות ונוטות יותר לשברים</p>
+                <p><strong>אזורים נפוצים לשברים:</strong> צוואר הירך, חוליות, שורש כף היד</p>
+                <p><strong>גורמי סיכון:</strong> גיל מתקדם, נשים אחרי גיל המעבר, חוסר פעילות גופנית, תזונה דלת סידן</p>
+            </div>
+
+            <div class="important">
+                <h4>🏃 מניעת אוסטאופורוזיס</h4>
+                <ul>
+                    <li>פעילות גופנית סדירה, במיוחד אימוני התנגדות ופעילויות נושאות משקל</li>
+                    <li>צריכה מספקת של סידן וויטמין D</li>
+                    <li>הימנעות מעישון וצריכת אלכוהול מופרזת</li>
+                    <li>בדיקות DEXA לניטור צפיפות העצם</li>
+                </ul>
+            </div>
+
+            <h3>צמיחה והתפתחות העצם</h3>
+            <div class="highlight-box">
+                <h4>Epiphyseal Plate (לוחית הצמיחה)</h4>
+                <p>אזור סחוסי בין האפיפיזה לדיאפיזה שבו מתרחשת צמיחה לאורך של העצם.</p>
+                <p><strong>גיל סגירה:</strong> 16-21 (משתנה בין אנשים ובין עצמות שונות)</p>
+                <p>לאחר הסגירה, לוחית הצמיחה הופכת ל-Epiphyseal Line ואין עוד צמיחה לאורך.</p>
+            </div>
+
+            <div class="important">
+                <h4>⚠️ חשיבות לילדים ובני נוער</h4>
+                <p>אימוני כוח מתוכננים כראוי בילדות ובגיל ההתבגרות לא מזיקים ללוחית הצמיחה, ואף מחזקים את העצמות. חשוב להקפיד על טכניקה נכונה ועומסים הולמים.</p>
+            </div>
+        </section>
+
+        <!-- סחוסים -->
+        <section id="cartilage" class="section">
+            <h2>🔷 סחוסים - Cartilage</h2>
+            
+            <div class="highlight-box">
+                <h3>מהו סחוס?</h3>
+                <p>סחוס הוא רקמת חיבור מיוחדת, גמישה וחלקה, עשירה במים. הסחוס <strong>אינו מכיל כלי דם</strong> (אווסקולרי) והוא ניזון בדיפוזיה, לכן יכולת ההתאוששות שלו מוגבלת.</p>
+            </div>
+
+            <h3>שלושה סוגי סחוסים</h3>
+
+            <h4>1. סחוס היאליני (Hyaline Cartilage)</h4>
+            <div class="card">
+                <p><strong>תיאור:</strong> הסוג הנפוץ ביותר, דק, שקוף, חלק וגמיש</p>
+                <p><strong>הרכב:</strong> עשיר במים (כ-60-80%)</p>
+                <p><strong>תפקיד עיקרי:</strong> מניעת חיכוך במפרקים.</p>
+                <p><strong>מיקומים:</strong></p>
+                <ul>
+                    <li>סחוס המפרק - מכסה את קצות העצמות במפרקים</li>
+                    <li>צלעות - מחבר צלעות לעצם החזה</li>
+                    <li>דרכי נשימה - אף, קנה הנשימה</li>
+                    <li>לוחית הצמיחה בילדים</li>
+                </ul>
+            </div>
+
+            <h4>2. סחוס סיבי (Fibrocartilage)</h4>
+            <div class="card">
+                <p><strong>תיאור:</strong> סחוס חזק ועמיד המכיל כמות גדולה של סיבי קולגן</p>
+                <p><strong>תפקיד עיקרי:</strong> פיזור עומסים, בלימת זעזועים, תמיכה</p>
+                <p><strong>מיקומים:</strong></p>
+                <ul>
+                    <li><strong>דיסקים בין-חוליתיים</strong> (Intervertebral Discs) - בין חוליות עמוד השדרה</li>
+                    <li><strong>מניסקוסים</strong> (Menisci) - בברכיים</li>
+                    <li><strong>Labrum</strong> - בכתף ובירך (טבעת סיבית המעמיקה את השקע המפרקי)</li>
+                    <li><strong>Pubic Symphysis</strong> - המפרק בין שתי עצמות החיק</li>
+                </ul>
+            </div>
+
+            <h4>3. סחוס אלסטי (Elastic Cartilage)</h4>
+            <div class="card">
+                <p><strong>תיאור:</strong> סחוס גמיש מאוד המכיל כמות גדולה של סיבי אלסטין</p>
+                <p><strong>תפקיד עיקרי:</strong> מתן תמיכה גמישה לאיברים</p>
+                <p><strong>מיקומים:</strong></p>
+                <ul>
+                    <li>אוזן חיצונית</li>
+                    <li>אפיגלוטיס (מכסה קנה הנשימה בבליעה)</li>
+                    <li>חלקים מהגרון</li>
+                </ul>
+            </div>
+
+            <h3>השוואה בין סוגי הסחוסים</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>סחוס היאליני</th>
+                    <th>סחוס סיבי</th>
+                    <th>סחוס אלסטי</th>
+                </tr>
+                <tr>
+                    <td><strong>גמישות</strong></td>
+                    <td>בינונית</td>
+                    <td>נמוכה (קשיח)</td>
+                    <td>גבוהה מאוד</td>
+                </tr>
+                <tr>
+                    <td><strong>חוזק</strong></td>
+                    <td>בינוני</td>
+                    <td>גבוה מאוד</td>
+                    <td>נמוך</td>
+                </tr>
+                <tr>
+                    <td><strong>סיבים עיקריים</strong></td>
+                    <td>קולגן דק</td>
+                    <td>קולגן עבה</td>
+                    <td>אלסטין</td>
+                </tr>
+                <tr>
+                    <td><strong>מים</strong></td>
+                    <td>60-80%</td>
+                    <td>60-70%</td>
+                    <td>70-80%</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <h4>⚠️ בעיות בסחוס</h4>
+                <p><strong>אין אספקת דם ישירה</strong> - הסחוס מתזן בדיפוזיה, לכן יכולת ההתחדשות שלו מוגבלת מאוד</p>
+                <p><strong>אין עצבוב ישיר</strong> - בשלבים הראשונים של נזק לסחוס אין כאב, מה שעלול להוביל להחמרה ללא שמטופל יודע</p>
+                <p><strong>שחיקת סחוס</strong> - תהליך בלתי הפיך ברוב המקרים. במקרים קשים עלול להוביל לאוסטיאוארתריטיס</p>
+            </div>
+
+            <h3>דרגות פגיעה בסחוס</h3>
+            <table>
+                <tr>
+                    <th>דרגה</th>
+                    <th>תיאור הנזק</th>
+                    <th>תסמינים</th>
+                </tr>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td>לחץ נקודתי ממושך - נוצרת "שלפוחית" על גבי הסחוס</td>
+                    <td>לרוב אין תסמינים</td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td>נוצרים סדקים בתוך הסחוס</td>
+                    <td>לרוב אין תסמינים, לעיתים אי נוחות קלה</td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td>מחסור בסחוס באזור נקודתי - העצם חשופה</td>
+                    <td>כאב בעת העמסה על האזור</td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td>שחיקה ניוונית נרחבת (Osteoarthritis)</td>
+                    <td>כאב משמעותי, נפיחות, הגבלה בתנועה</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- מפרקים -->
+        <section id="joints" class="section">
+            <h2>🔗 מפרקים - Joints (Articulations)</h2>
+            
+            <div class="highlight-box">
+                <h3>מהו מפרק?</h3>
+                <p>מפרק הוא <strong>מקום החיבור בין שתי עצמות או יותר</strong>. המפרקים מאפשרים תנועה ויציבות לגוף.</p>
+            </div>
+
+            <h3>שלושה סוגי מפרקים לפי רמת התנועתיות</h3>
+
+            <h4>1. מפרקים ללא תנועה - Fibrous Joints</h4>
+            <div class="card">
+                <p><strong>מבנה:</strong> העצמות מחוברות ברקמת חיבור צפופה (קולגן) ללא חלל מפרקי</p>
+                <p><strong>תנועתיות:</strong> אין תנועה או תנועה זניחה</p>
+                <p><strong>דוגמאות:</strong></p>
+                <ul>
+                    <li><strong>Sutures (תפרים)</strong> - בגולגולת, בין עצמות הגולגולת</li>
+                    <li><strong>Gomphosis</strong> - שן בשקע בלסת</li>
+                    <li><strong>Syndesmosis</strong> - בין טיביה לפיבולה בשוק</li>
+                </ul>
+            </div>
+
+            <h4>2. מפרקים בעלי תנועה מוגבלת - Cartilaginous Joints</h4>
+            <div class="card">
+                <p><strong>מבנה:</strong> העצמות מחוברות בסחוס</p>
+                <p><strong>תנועתיות:</strong> תנועה מוגבלת, בעיקר בלימת זעזועים</p>
+                <p><strong>דוגמאות:</strong></p>
+                <ul>
+                    <li><strong>Intervertebral Discs</strong> - דיסקים בין חוליות עמוד השדרה</li>
+                    <li><strong>Pubic Symphysis</strong> - חיבור בין עצמות החיק באגן</li>
+                    <li><strong>Sternocostal Joints</strong> - חיבור צלעות לעצם החזה</li>
+                </ul>
+            </div>
+
+            <h4>3. מפרקים בעלי תנועה חופשית - Synovial Joints</h4>
+            <div class="highlight-box">
+                <p><strong>מבנה:</strong> מפרקים מורכבים עם חלל מפרקי וקפסולה</p>
+                <p><strong>תנועתיות:</strong> טווח תנועה רחב, המפרקים הנפוצים ביותר בגוף</p>
+                <p><strong>זהו הסוג החשוב ביותר למאמן כושר! (המפרקים שאנחנו מאמנים)</strong></p>
+            </div>
+
+            <h3>מבנה המפרק הסינוביאלי (Synovial Joint)</h3>
+            
+            <div class="important">
+                <h4>רכיבי המפרק הסינוביאלי - חובה לדעת!</h4>
+                <ol>
+                    <li><strong>Articular Cartilage (סחוס המפרק)</strong> - סחוס היאליני המכסה את קצות העצמות. מפחית חיכוך ובולם זעזועים</li>
+                    <li><strong>Joint Cavity (מפגש בין עצמות\חלל מפרקי)</strong> - מרווח בין העצמות המכיל נוזל סינוביאלי</li>
+                    <li><strong>Articular Capsule (קפסולה מפרקית)</strong> - מעטפת המפרק, עשויה מרקמת חיבור ועוטפת את המפרק</li>
+                    <li><strong>Synovial Membrane (קרום סינוביאלי)</strong> - רקמה המצפה את הקפסולה מבפנים ומפרישה נוזל סינוביאלי</li>
+                    <li><strong>Synovial Fluid (נוזל סינוביאלי)</strong> - נוזל צמיג שמשמן את המפרק, מזין את הסחוס ובולם זעזועים</li>
+                    <li><strong>Ligaments (רצועות)</strong> - רקמת חיבור צפופה המחזקת את המפרק ומגבילה תנועה לא רצויה</li>
+                </ol>
+            </div>
+
+            <h3>סוגי מפרקים סינוביאליים לפי צורה ותנועה</h3>
+            <table>
+                <tr>
+                    <th>סוג מפרק</th>
+                    <th>מבנה</th>
+                    <th>תנועות</th>
+                    <th>דוגמאות</th>
+                </tr>
+                <tr>
+                    <td><strong>Ball & Socket</strong><br>(כדור ושקע)</td>
+                    <td>ראש כדורי נכנס לשקע</td>
+                    <td>רב-צירי - כל התנועות בכל המישורים</td>
+                    <td>כתף (Glenohumeral), ירך (Hip)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hinge</strong><br>(ציר)</td>
+                    <td>כמו ציר דלת</td>
+                    <td>חד-צירי - Flexion/Extension</td>
+                    <td>מרפק (Elbow), ברך (Knee), אצבעות</td>
+                </tr>
+                <tr>
+                    <td><strong>Pivot</strong><br>(ציר סיבובי)</td>
+                    <td>עצם אחת מסתובבת סביב אחרת</td>
+                    <td>חד-צירי - Rotation</td>
+                    <td>C1-C2 (Atlas-Axis), רדיוס-אולנה</td>
+                </tr>
+                <tr>
+                    <td><strong>Condyloid</strong><br>(אליפסואידי)</td>
+                    <td>משטח אליפסי</td>
+                    <td>דו-צירי - Flexion/Extension, Abduction/Adduction</td>
+                    <td>שורש כף יד (Wrist)</td>
+                </tr>
+                <tr>
+                    <td><strong>Saddle</strong><br>(אוכף)</td>
+                    <td>שתי עצמות בצורת אוכף</td>
+                    <td>דו-צירי - תנועות מגוונות</td>
+                    <td>בסיס האגודל</td>
+                </tr>
+                <tr>
+                    <td><strong>Gliding</strong><br>(החלקה)</td>
+                    <td>משטחים שטוחים</td>
+                    <td>החלקה מוגבלת</td>
+                    <td>פנים השכמה, שורש כף יד/רגל</td>
+                </tr>
+            </table>
+
+            <h3>רצועה (Ligament) vs גיד (Tendon)</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Ligament - רצועה</h4>
+                    <p><strong>מחברת:</strong> עצם לעצם</p>
+                    <p><strong>תפקיד:</strong> ייצוב המפרק, מניעת תנועה מוגזמת</p>
+                    <p><strong>הרכב:</strong> רקמת חיבור עשירה בקולגן Type I</p>
+                    <p><strong>גמישות:</strong> מעט גמישה (כ-5-10% מתיחה)</p>
+                    <p><strong>דוגמאות:</strong> ACL, PCL בברך; LCL, MCL בברך ומרפק</p>
+                </div>
+                <div class="card">
+                    <h4>Tendon - גיד</h4>
+                    <p><strong>מחבר:</strong> שריר לעצם</p>
+                    <p><strong>תפקיד:</strong> העברת כוח מהשריר לעצם</p>
+                    <p><strong>הרכב:</strong> רקמת חיבור עשירה מאוד בקולגן, המשך ישיר של מעטפת השריר</p>
+                    <p><strong>גמישות:</strong> קשיח מאוד (עד 8% מתיחה)</p>
+                    <p><strong>דוגמאות:</strong> גיד אכילס, Patellar Tendon, Rotator Cuff</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>⚠️ פציעות נפוצות</h4>
+                <p><strong>נקע (Sprain)</strong> - קרע ברצועה. 3 דרגות חומרה:</p>
+                <ul>
+                    <li>דרגה 1 - קרע מיקרוסקופי, החלמה מהירה</li>
+                    <li>דרגה 2 - קרע חלקי, החלמה 4-6 שבועות</li>
+                    <li>דרגה 3 - קרע מלא, עלול לדרוש ניתוח</li>
+                </ul>
+                <p><strong>מתיחה/קרע (Strain)</strong> - קרע בסיבי השריר או הגיד</p>
+                <p><strong>דלקת גיד (Tendinitis)</strong> - דלקת בגיד כתוצאה משימוש יתר</p>
+            </div>
+        </section>
+
+        <!-- מערכת השרירים -->
+        <section id="muscles" class="section">
+            <h2>💪 מערכת השרירים - Muscular System</h2>
+            
+            <div class="highlight-box">
+                <h3>מהו שריר?</h3>
+                <p>שריר הוא רקמה בעלת יכולת <strong>התכווצות</strong>, המאפשרת תנועה, שמירת יציבה וייצור חום.</p>
+            </div>
+
+            <h3>שלושה סוגי שרירים</h3>
+
+            <h4>1. שריר שלד (Skeletal Muscle) - שריר משורטט</h4>
+            <div class="card">
+                <p><strong>שליטה:</strong> רצונית (Voluntary)</p>
+                <p><strong>מראה:</strong> משורטט (Striated) - פסים רוחביים</p>
+                <p><strong>מיקום:</strong> מחובר לשלד בגידים</p>
+                <p><strong>תפקיד:</strong> תנועה, שמירת יציבה, ייצור חום</p>
+                <p><strong>זהו השריר שאנו מאמנים!</strong></p>
+            </div>
+
+            <h4>2. שריר חלק (Smooth Muscle)</h4>
+            <div class="card">
+                <p><strong>שליטה:</strong> לא רצונית (Involuntary)</p>
+                <p><strong>מראה:</strong> לא משורטט (Non-striated)</p>
+                <p><strong>מיקום:</strong> דפנות איברים פנימיים, כלי דם</p>
+                <p><strong>תפקיד:</strong> תנועת מזון במעיים, התכווצות כלי דם</p>
+            </div>
+
+            <h4>3. שריר הלב (Cardiac Muscle)</h4>
+            <div class="card">
+                <p><strong>שליטה:</strong> לא רצונית (Involuntary)</p>
+                <p><strong>מראה:</strong> משורטט (Striated)</p>
+                <p><strong>מיקום:</strong> שריר הלב בלבד</p>
+                <p><strong>תפקיד:</strong> שאיבת דם</p>
+                <p><strong>ייחודיות:</strong> מתכווץ באופן אוטומטי ומקצבי</p>
+            </div>
+
+            <h3>מבנה שריר השלד</h3>
+            
+            <div class="important">
+                <h4>היררכיה - מהקטן לגדול</h4>
+                <ol>
+                    <li><strong>Myofilaments (מיופילמנטים)</strong> - חלבוני הכיווץ: Actin (אקטין) ו-Myosin (מיוזין)</li>
+                    <li><strong>Sarcomere (סרקומר)</strong> - יחידת התפקוד הבסיסית של הכיווץ</li>
+                    <li><strong>Myofibril (מיופיבריל)</strong> - סיבון שריר - שרשרת של סרקומרים</li>
+                    <li><strong>Muscle Fiber (סיב שריר)</strong> - תא שריר בודד, מכיל מספר מיופיבריל</li>
+                    <li><strong>Fascicle (פסיקל)</strong> - צרור של סיבי שריר</li>
+                    <li><strong>Muscle (שריר)</strong> - אוסף של פסיקלים עטוף במעטפת (Fascia)</li>
+                </ol>
+            </div>
+
+            <h3>הסרקומר - יחידת הכיווץ</h3>
+            <div class="highlight-box">
+                <p><strong>מבנה:</strong> הסרקומר מורכב מחלבונים:</p>
+                <ul>
+                    <li><strong>Actin (אקטין)</strong> - Thin Filaments (סיבים דקים)</li>
+                    <li><strong>Myosin (מיוזין)</strong> - Thick Filaments (סיבים עבים), בעלי "ראשים" שיוצרים גשרי רוחב</li>
+                    <li><strong>Troponin (טרופונין)</strong> - חלבון רגולטורי הקשור לסידן ומאפשר את הכיווץ</li>
+                    <li><strong>Tropomyosin (טרופומיוזין)</strong> - חוסם את אתרי הקישור על האקטין במנוחה</li>
+                </ul>
+            </div>
+
+            <h3>מנגנון הכיווץ</h3>
+            <div class="highlight-box">
+                <h4>תהליך הכיווץ - Sliding Filament Theory</h4>
+                <ol>
+                    <li><strong>דחף עצבי</strong> מגיע לשריר</li>
+                    <li><strong>שחרור יוני סידן (Ca²⁺)</strong> מה-Sarcoplasmic Reticulum</li>
+                    <li><strong>הסידן נקשר לטרופונין</strong>, גורם לשינוי בצורתו</li>
+                    <li><strong>אתרי הקישור על האקטין נחשפים</strong></li>
+                    <li><strong>ראשי המיוזין נקשרים לאקטין</strong> ויוצרים גשרי רוחב</li>
+                    <li><strong>Power Stroke</strong> - ראשי המיוזין "גוררים" את האקטין למרכז הסרקומר</li>
+                    <li><strong>הסרקומר מתקצר</strong> - הכיווץ!</li>
+                    <li>התהליך חוזר על עצמו כל עוד יש דחף עצבי ו-ATP</li>
+                </ol>
+                <p><strong>אנרגיה:</strong> כל מחזור דורש ATP (אדנוזין טריפוספט)</p>
+            </div>
+
+            <h3>סוגי כיווץ שריר</h3>
+
+            <h4>1. כיווץ איזוטוני (Isotonic) - כיווץ דינמי</h4>
+            <p>הכיווץ הנפוץ ביותר, בו אורך השריר משתנה</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>קונצנטרי (Concentric)</h4>
+                    <p><strong>השריר מתכווץ ומתקצר</strong></p>
+                    <p><strong>דוגמה:</strong> הרמת משקולת כלפי מעלה - הביצפס מתקצר</p>
+                    <p><strong>תפקיד:</strong> ייצור כוח, ביצוע תנועה</p>
+                    <p><strong>קל לזכור:</strong> "קון" מתחרז עם "ניצחון" - השריר מתגבר על ההתנגדות</p>
+                </div>
+                <div class="card">
+                    <h4>אקסצנטרי (Eccentric)</h4>
+                    <p><strong>השריר מתכווץ ומתארך</strong></p>
+                    <p><strong>דוגמה:</strong> הורדת משקולת בשליטה - הביצפס מתארך בעוד הוא מתכווץ</p>
+                    <p><strong>תפקיד:</strong> בלימה, שליטה בתנועה, בולם זעזועים</p>
+                    <p><strong>קל לזכור:</strong> "Exit" - החוצה, השריר מתארך</p>
+                    <p><strong>חשוב:</strong> כיווץ אקסצנטרי יכול לייצר עד 40% יותר כוח!</p>
+                </div>
+            </div>
+
+            <h4>2. כיווץ איזומטרי (Isometric) - כיווץ סטטי</h4>
+            <div class="card">
+                <p><strong>השריר מתכווץ ללא שינוי באורכו</strong></p>
+                <p><strong>דוגמה:</strong> אחזקת Plank, דחיפת קיר</p>
+                <p><strong>תפקיד:</strong> ייצוב, שמירת יציבה</p>
+                <p><strong>יתרון:</strong> מחזק את השריר בזווית ספציפית</p>
+                <p><strong>חיסרון:</strong> השיפור בכוח ספציפי לזווית בה התאמנו</p>
+            </div>
+
+            <h3>תפקידי השריר בתנועה</h3>
+            <table>
+                <tr>
+                    <th>תפקיד</th>
+                    <th>הגדרה</th>
+                    <th>דוגמה</th>
+                </tr>
+                <tr>
+                    <td><strong>Agonist<br>(אגוניסט)</strong></td>
+                    <td>השריר העיקרי המבצע את התנועה - המניע הראשי (Prime Mover)</td>
+                    <td>בכפיפת מרפק: Biceps Brachii</td>
+                </tr>
+                <tr>
+                    <td><strong>Antagonist<br>(אנטגוניסט)</strong></td>
+                    <td>השריר המבצע את הפעולה ההפוכה, נמצא ברפיון יחסי</td>
+                    <td>בכפיפת מרפק: Triceps (מבצע פשיטה)</td>
+                </tr>
+                <tr>
+                    <td><strong>Synergist<br>(סינרגיסט)</strong></td>
+                    <td>שריר עוזר המסייע לאגוניסט בביצוע התנועה</td>
+                    <td>בכפיפת מרפק: Brachialis, Brachioradialis</td>
+                </tr>
+                <tr>
+                    <td><strong>Fixator/Stabilizer<br>(מקבע/מייצב)</strong></td>
+                    <td>שריר המייצב חלק מסוים בגוף בכיווץ איזומטרי</td>
+                    <td>בכפיפת מרפק: שרירי השכמה מייצבים את הכתף</td>
+                </tr>
+            </table>
+
+            <div class="important">
+                <h4>💡 עקרון חשוב</h4>
+                <p>התפקידים משתנים בהתאם לתנועה! שריר שהוא אגוניסט בתנועה אחת יכול להיות אנטגוניסט או סינרגיסט בתנועה אחרת.</p>
+            </div>
+
+            <h3>סוגי סיבי שריר</h3>
+            <table>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>Type I (סיבים אדומים/איטיים)</th>
+                    <th>Type IIa (סיבים אדומים/מהירים)</th>
+                    <th>Type IIx (סיבים לבנים/מהירים)</th>
+                </tr>
+                <tr>
+                    <td><strong>מהירות התכווצות</strong></td>
+                    <td>איטי</td>
+                    <td>מהיר</td>
+                    <td>מהיר מאוד</td>
+                </tr>
+                <tr>
+                    <td><strong>עמידות לעייפות</strong></td>
+                    <td>גבוהה מאוד</td>
+                    <td>בינונית-גבוהה</td>
+                    <td>נמוכה</td>
+                </tr>
+                <tr>
+                    <td><strong>ייצור כוח</strong></td>
+                    <td>נמוך-בינוני</td>
+                    <td>גבוה</td>
+                    <td>גבוה מאוד</td>
+                </tr>
+                <tr>
+                    <td><strong>מיטוכונדריה</strong></td>
+                    <td>הרבה</td>
+                    <td>בינוני</td>
+                    <td>מעט</td>
+                </tr>
+                <tr>
+                    <td><strong>מקור אנרגיה</strong></td>
+                    <td>אירובי (חמצן)</td>
+                    <td>אירובי + אנאירובי</td>
+                    <td>אנאירובי (ללא חמצן)</td>
+                </tr>
+                <tr>
+                    <td><strong>פעילויות מתאימות</strong></td>
+                    <td>ריצות ארוכות, אופניים, שחייה למרחקים</td>
+                    <td>ריצת 400-800 מטר, שחייה בינונית</td>
+                    <td>ספרינט, הרמת משקולות כבדות</td>
+                </tr>
+            </table>
+
+            <div class="info">
+                <h4>💡 עובדות מעניינות</h4>
+                <ul>
+                    <li>היחס בין סוגי הסיבים נקבע גנטית בעיקר</li>
+                    <li>אימונים יכולים לשפר את תפקוד הסיבים אבל לא לשנות את הסוג</li>
+                    <li>ספורטאי סיבולת יהיו בעלי אחוז גבוה יותר של Type I</li>
+                    <li>ספורטאי כוח/מהירות יהיו בעלי אחוז גבוה יותר של Type II</li>
+                </ul>
+            </div>
+
+            <h3>נקודות אחיזה של השריר</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Origin (מוצא/תחל)</h4>
+                    <p><strong>נקודת האחיזה הקרובה/היציבה יותר</strong></p>
+                    <p>בדרך כלל על העצם הפרוקסימלית/מרכזית יותר</p>
+                    <p>זו הנקודה ש"לא זז" במהלך התנועה</p>
+                </div>
+                <div class="card">
+                    <h4>Insertion (אחז)</h4>
+                    <p><strong>נקודת האחיזה הרחוקה/הנעה</strong></p>
+                    <p>בדרך כלל על העצם הדיסטלית/היקפית יותר</p>
+                    <p>זו הנקודה שזזה לכיוון ה-Origin כשהשריר מתכווץ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- מישורי תנועה -->
+        <section id="planes" class="section">
+            <h2>📐 מישורי תנועה - Planes of Motion</h2>
+            
+            <div class="highlight-box">
+                <h3>שלושה מישורי תנועה עיקריים</h3>
+                <p>כל תנועה בגוף מתרחשת באחד או יותר מהמישורים הבאים. הבנת המישורים חיונית לתכנון אימונים יעילים!</p>
+            </div>
+
+            <h3>1. המישור הסגיטלי (Sagittal Plane) - מישור חיצי</h3>
+<div class="card">
+    <p><strong>חוצה את הגוף:</strong> לימין ושמאל</p>
+    <p><strong>ציר התנועה:</strong> מדיאלי-לטרלי (Mediolateral)</p>
+    <p><strong>תנועות עיקריות:</strong></p>
+    <ul>
+        <li><strong>Flexion (כפיפה)</strong> - הקטנת הזווית בין שני חלקי גוף</li>
+        <li><strong>Extension (פשיטה)</strong> - הגדלת הזווית בין שני חלקי גוף</li>
+        <li><strong>Dorsiflexion (כפיפה גבי)</strong> - כיפוף כף הרגל כלפי מעלה</li>
+        <li><strong>Plantarflexion (כפיפה כפית)</strong> - כיפוף כף הרגל כלפי מטה</li>
+    </ul>
+    <p><strong>דוגמאות לתרגילים:</strong> Squat, Deadlift, Lunge קדמי, Bicep Curl, Push-Up</p>
+</div>
+
+<h3>2. המישור הפרונטלי (Frontal / Coronal Plane) - מישור חזיתי</h3>
+<div class="card">
+    <p><strong>חוצה את הגוף:</strong> לקדמי ואחורי</p>
+    <p><strong>ציר התנועה:</strong> אנטרו-פוסטריור (Anteroposterior)</p>
+    <p><strong>תנועות עיקריות:</strong></p>
+    <ul>
+        <li><strong>Abduction (הרחקה)</strong> - ריחוק האיבר מקו האמצע של הגוף</li>
+        <li><strong>Adduction (קירוב)</strong> - קירוב האיבר לקו האמצע של הגוף</li>
+        <li><strong>Lateral Flexion (כפיפה צידית)</strong> - כפיפת עמוד השדרה הצידה</li>
+        <li><strong>Elevation (הרמה)</strong> - הרמת שכמות כלפי מעלה</li>
+        <li><strong>Depression (הורדה)</strong> - הורדת שכמות כלפי מטה</li>
+        <li><strong>Inversion (אינברסיה)</strong> - הפניית כף הרגל פנימה</li>
+        <li><strong>Eversion (איברסיה)</strong> - הפניית כף הרגל החוצה</li>
+    </ul>
+    <p><strong>דוגמאות לתרגילים:</strong> Lateral Raise, Side Lunge, Jumping Jacks, Side Plank</p>
+</div>
+
+<h3>3. המישור הטרנסברסלי (Transverse / Horizontal Plane) - מישור אופקי</h3>
+<div class="card">
+    <p><strong>חוצה את הגוף:</strong> לעליון ותחתון</p>
+    <p><strong>ציר התנועה:</strong> אנכי (Vertical / Longitudinal)</p>
+    <p><strong>תנועות עיקריות:</strong></p>
+    <ul>
+        <li><strong>Rotation (רוטציה)</strong> - סיבוב סביב ציר אנכי</li>
+        <li><strong>Internal / Medial Rotation (סיבוב פנימה)</strong></li>
+        <li><strong>External / Lateral Rotation (סיבוב החוצה)</strong></li>
+        <li><strong>Horizontal Abduction (הרחקה אופקית)</strong></li>
+        <li><strong>Horizontal Adduction (קירוב אופקי)</strong></li>
+        <li><strong>Pronation (פרונציה)</strong> - סיבוב האמה כך שכף היד פונה למטה</li>
+        <li><strong>Supination (סופינציה)</strong> - סיבוב האמה כך שכף היד פונה למעלה</li>
+    </ul>
+    <p><strong>דוגמאות לתרגילים:</strong> Russian Twist, Cable Wood Chop, Medicine Ball Throw</p>
+</div>
+
+
+            <div class="important">
+                <h4>💡 חשיבות למאמן כושר</h4>
+                <p>תכנית אימונים מאוזנת חייבת לכלול תרגילים בכל שלושת המישורים!</p>
+                <ul>
+                    <li>רוב האנשים מתאמנים רק במישור הסגיטלי</li>
+                    <li>הזנחת המישורים הפרונטלי והטרנסברסלי עלולה להוביל לחוסר איזון ופציעות</li>
+                    <li>תנועות ספורטיביות כמעט תמיד משלבות יותר ממישור אחד</li>
+                </ul>
+            </div>
+
+            <h3>מונחי יחס נוספים - חיוניים!</h3>
+            <table>
+                <tr>
+                    <th>מונח</th>
+                    <th>משמעות</th>
+                    <th>הפוך</th>
+                </tr>
+                <tr>
+                    <td><strong>Anterior/Ventral</strong></td>
+                    <td>קדמי - לכיוון החזה</td>
+                    <td><strong>Posterior/Dorsal</strong> - אחורי</td>
+                </tr>
+                <tr>
+                    <td><strong>Superior/Cephalic</strong></td>
+                    <td>עליון - לכיוון הראש</td>
+                    <td><strong>Inferior/Caudal</strong> - תחתון</td>
+                </tr>
+                <tr>
+                    <td><strong>Medial</strong></td>
+                    <td>פנימי - קרוב לקו האמצע</td>
+                    <td><strong>Lateral</strong> - חיצוני, רחוק מקו האמצע</td>
+                </tr>
+                <tr>
+                    <td><strong>Proximal</strong></td>
+                    <td>קרוב לנקודת חיבור הגף לגוף</td>
+                    <td><strong>Distal</strong> - רחוק מנקודת החיבור</td>
+                </tr>
+                <tr>
+                    <td><strong>Superficial</strong></td>
+                    <td>שטחי - קרוב לפני השטח</td>
+                    <td><strong>Deep</strong> - עמוק</td>
+                </tr>
+            </table>
+
+            <h3>תנועות מיוחדות</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>תנועות השכמה</h4>
+                    <ul>
+                        <li><strong>Elevation</strong> - הרמת שכמות</li>
+                        <li><strong>Depression</strong> - הורדת שכמות</li>
+                        <li><strong>Protraction/Abduction</strong> - הרחקת שכמות קדימה</li>
+                        <li><strong>Retraction/Adduction</strong> - קירוב שכמות אחורה</li>
+                        <li><strong>Upward Rotation</strong> - סיבוב מעלה והחוצה</li>
+                        <li><strong>Downward Rotation</strong> - סיבוב מטה ופנימה</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>תנועות האגן</h4>
+                    <ul>
+                        <li><strong>APT (Anterior Pelvic Tilt)</strong> - הטיית אגן קדימה, מגדילה לורדוזה מותנית</li>
+                        <li><strong>PPT (Posterior Pelvic Tilt)</strong> - הטיית אגן אחורה, משטיחה לורדוזה מותנית</li>
+                        <li><strong>Lateral Pelvic Tilt</strong> - הטיית אגן הצידה</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- עמוד השדרה -->
+        <section id="spine" class="section">
+            <h2>🦴 עמוד השדרה - Vertebral Column</h2>
+            
+            <div class="highlight-box">
+                <h3>מבנה כללי</h3>
+                <p>עמוד השדרה מורכב מ-<strong>33 חוליות</strong> המחולקות ל-5 אזורים</p>
+            </div>
+
+            <h3>חלוקת עמוד השדרה</h3>
+            <table>
+                <tr>
+                    <th>אזור</th>
+                    <th>סימון</th>
+                    <th>מספר חוליות</th>
+                    <th>מאפיינים</th>
+                </tr>
+                <tr>
+                    <td><strong>צווארי (Cervical)</strong></td>
+                    <td>C1-C7</td>
+                    <td>7 חוליות</td>
+                    <td>
+                        • נקב בזיזים הרוחביים (עובר בו עורק חולייתי)<br>
+                        • גוף חולייה קטן וצר<br>
+                        • זיז אחורי ממוזלג (C2-C6)<br>
+                        • נקב חולייתי משולש וגדול<br>
+                        • משטחים מפרקיים במישור הוריזונטלי
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>חזה (Thoracic)</strong></td>
+                    <td>T1-T12</td>
+                    <td>12 חוליות</td>
+                    <td>
+                        • משטח מפרקי לחיבור צלעות (סימן מובהק!)<br>
+                        • גוף חולייה בינוני<br>
+                        • זיז אחורי נוטה כלפי מטה (T5-T8)<br>
+                        • משטחים מפרקיים במישור קורונלי
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>מותני (Lumbar)</strong></td>
+                    <td>L1-L5</td>
+                    <td>5 חוליות</td>
+                    <td>
+                        • גוף חולייה גדול ועבה (נושאות משקל רב!)<br>
+                        • זיז אחורי ריבועי ומעובה<br>
+                        • נקב חולייתי קטן יחסית<br>
+                        • משטחים מפרקיים במישור סגיטלי
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>סקרום (Sacrum)</strong></td>
+                    <td>S1-S5</td>
+                    <td>5 חוליות מאוחות</td>
+                    <td>
+                        • עצם משולשת אחת<br>
+                        • מחוברת לאגן (Sacroiliac Joint)<br>
+                        • נושאת את משקל הגוף העליון
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>קוקסיקס (Coccyx)</strong></td>
+                    <td>Co1-Co4</td>
+                    <td>4 חוליות מאוחות</td>
+                    <td>
+                        • עצם הזנב<br>
+                        • שריד אבולוציוני<br>
+                        • נקודת אחיזה לשרירי רצפת האגן
+                    </td>
+                </tr>
+            </table>
+
+            <h3>עקומות עמוד השדרה (מבט צידי)</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>לורדוזה (Lordosis) - קעור</h4>
+                    <p><strong>מיקום:</strong> צוואר ומותניים</p>
+                    <p><strong>כיוון:</strong> עקמומיות קדימה (קמור לאחור, קעור קדימה)</p>
+                    <p><strong>תפקיד:</strong> בולם זעזועים, שומר על מרכז כובד</p>
+                </div>
+                <div class="card">
+                    <h4>קיפוזיס (Kyphosis) - קמור</h4>
+                    <p><strong>מיקום:</strong> בית חזה וסקרום</p>
+                    <p><strong>כיוון:</strong> עקמומיות אחורה (קמור קדימה, קעור אחורה)</p>
+                    <p><strong>תפקיד:</strong> הגנה על איברים, בולם זעזועים</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>⚠️ פתולוגיות יציבה</h4>
+                <ul>
+                    <li><strong>Hyperlordosis</strong> - לורדוזה מוגזמת (קער מוגזם)</li>
+                    <li><strong>Hyperkyphosis</strong> - קיפוזה מוגזמת (גיבנת, "גב עגול")</li>
+                    <li><strong>Scoliosis (עקמת)</strong> - עקמומיות צידית של עמוד השדרה (מבט אחורי/קדמי)</li>
+                </ul>
+            </div>
+
+            <h3>חוליות מיוחדות</h3>
+            
+            <h4>C1 - Atlas (אטלס)</h4>
+            <div class="info">
+                <img src="c1.png" alt="חוליית אטלס C1" class="vertebra-img">
+                <p><strong>ייחוד:</strong> היחידה שבאה במגע ישיר עם הגולגולת</p>
+                <p><strong>מבנה:</strong> חסרת גוף חולייה, בנויה משתי קשתות</p>
+                <p><strong>תנועה:</strong> מאפשרת הנהון (כן-כן) - Flexion/Extension של הראש</p>
+                
+            </div>
+
+            <h4>C2 - Axis (ציר)</h4>
+            <div class="info">
+                <img src="c2.png" alt="חוליית AXIS C2" class="vertebra-img">
+                <p><strong>ייחוד:</strong> בעלת Dens (זיז השן) - בליטה עצמית כלפי מעלה</p>
+                <p><strong>מבנה:</strong> ה-Dens נכנס למגרעת בחולית C1</p>
+                <p><strong>תנועה:</strong> מאפשרת סיבוב הראש (לא-לא) - Rotation</p>
+                <p><strong>מפרק:</strong> Atlanto-Axial Joint - מפרק Pivot</p>
+            </div>
+
+            <h3>מבנה החולייה</h3>
+            <div class="highlight-box">
+                <h4>חלקי החולייה</h4>
+                <ul>
+                    <img src="body.png" alt="גוף החולייה" class="vertebra-img">
+                    <li><strong>1.Body (גוף החולייה)</strong> - החלק העבה והעגול, נושא משקל</li>
+                    <li><strong>2-3.Transverse Processes (זיזים רוחביים)</strong> - בולטים הצידה, נקודת אחיזה לשרירים</li>
+                    <li><strong>4.Vertebral Foramen (נקב חולייתי)</strong> - חור במרכז דרכו עובר חוט השדרה</li>
+                    <li><strong>5.Superior & Inferior Articular Processes (משטחים מפרקיים)</strong> - יוצרים מפרקים עם החוליות השכנות (Facet Joints)</li>
+                    <li><strong>6.Spinous Process (זיז אחורי)</strong> - בולט אחורה, נקודת אחיזה לשרירים</li>
+                    <li><strong>Intervertebral Foramina (נקבים בין-חוליתיים)</strong> - פתחים דרכם יוצאים עצבים</li>
+                </ul>
+            </div>
+
+            <h3>דיסק בין-חוליתי (Intervertebral Disc)</h3>
+            <div class="card">
+                <p><strong>מיקום:</strong> בין גופי החוליות (לא בין C1-C2!)</p>
+                <p><strong>סוג:</strong> סחוס סיבי (Fibrocartilage)</p>
+                <p><strong>מבנה:</strong></p>
+                <ul>
+                    <li><strong>Nucleus Pulposus (גרעין ג'לטיני)</strong> - מרכז הדיסק, עשיר במים (80-85%)</li>
+                    <li><strong>Annulus Fibrosus (טבעות סיביות)</strong> - מעטפת חיצונית עשירה בקולגן</li>
+                </ul>
+                <p><strong>תפקידים:</strong></p>
+                <ul>
+                    <li>בולם זעזועים ופיזור עומסים</li>
+                    <li>מאפשר תנועה מוגבלת בין החוליות</li>
+                    <li>מונע חיכוך בין גופי החוליות</li>
+                    <li>שומר על מרחק בין החוליות</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>⚠️ פתולוגיות דיסק</h4>
+                <p><strong>בליטת דיסק (Disc Bulge):</strong> הגרעין הג'לטיני לוחץ על הטבעות הסיביות, הדיסק בולט מהמתאר התקין</p>
+                <p><strong>פריצת דיסק (Disc Herniation):</strong> הגרעין הג'לטיני קורע ופורץ את הטבעות הסיביות</p>
+                <p><strong>תסמינים:</strong> כאב, הקרנה לגפיים, חולשה, עקצוצים (בהתאם לעצב שנלחץ)</p>
+                <p><strong>אזורים נפוצים:</strong> L4-L5, L5-S1 (מותניים תחתונות), C5-C6, C6-C7 (צוואר תחתון)</p>
+            </div>
+
+
+            <!--
+            <h3>שרירי הליבה (Core)</h3>
+            
+            <h4>שרירי הבטן (Abdominal Muscles)</h4>
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Rectus Abdominis<br>(הישר הבטני)</strong></td>
+                    <td>Pubis</td>
+                    <td>Sternum (Xiphoid), צלעות 5-7, Linea Alba</td>
+                    <td>Flexion של עמוד השדרה, PPT (סיבוב אגן אחורה)</td>
+                </tr>
+                <tr>
+                    <td><strong>External Oblique<br>(אלכסון חיצוני)</strong></td>
+                    <td>צלעות 5-12 (חלק חיצוני)</td>
+                    <td>Iliac Crest, Linea Alba, Pubic</td>
+                    <td><strong>דו-צדדי:</strong> Flexion, PPT<br><strong>חד-צדדי:</strong> Side Flexion, רוטציה לכיוון הנגדי</td>
+                </tr>
+                <tr>
+                    <td><strong>Internal Oblique<br>(אלכסון פנימי)</strong></td>
+                    <td>Iliac Crest, Thoracolumbar Fascia</td>
+                    <td>צלעות 8-12, Linea Alba, Pubic</td>
+                    <td><strong>דו-צדדי:</strong> Flexion, PPT<br><strong>חד-צדדי:</strong> Side Flexion, רוטציה לאותו הכיוון</td>
+                </tr>
+                <tr>
+                    <td><strong>Transverse Abdominis<br>(הרוחבי של הבטן)</strong></td>
+                    <td>צלעות 6-12, Iliac Crest, Thoracolumbar Fascia</td>
+                    <td>Linea Alba</td>
+                    <td>העלאת לחץ תוך-בטני, ייצוב הליבה</td>
+                </tr>
+            </table>
+
+            <div class="info">
+                <h4>💡 Linea Alba (הקו הלבן)</h4>
+                <p>רקמת חיבור קולגנית המחברת את כל שרירי הבטן, עוברת אנכית במרכז הבטן מה-Sternum ועד ה-Pubis</p>
+            </div>
+
+            <h4>זוקפי הגב (Erector Spinae)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Sacrum, Iliac Crest</p>
+                <p><strong>Insertion:</strong> לאורך עמוד השדרה</p>
+                <p><strong>Action:</strong></p>
+                <ul>
+                    <li><strong>דו-צדדי:</strong> Extension של עמוד השדרה, APT</li>
+                    <li><strong>חד-צדדי:</strong> Side Flexion</li>
+                </ul>
+                <p><strong>שלושה חלקים (מפנימי לחיצוני):</strong></p>
+                <ul>
+                    <li><strong>Spinalis</strong> - המדיאלי</li>
+                    <li><strong>Longissimus</strong> - האמצעי</li>
+                    <li><strong>Iliocostalis</strong> - הלטרלי</li>
+                </ul>
+            </div>
+
+            <h4>שכבה עמוקה - Transversospinalis</h4>
+            <div class="card">
+                <p><strong>תפקיד עיקרי:</strong> ייצוב עמוד השדרה, תנועות עדינות בין חוליות</p>
+                <p><strong>שלושה חלקים (לפי מספר חוליות שהם מגשרים):</strong></p>
+                <ul>
+                    <li><strong>Rotatores</strong> - 1-2 חוליות</li>
+                    <li><strong>Multifidus</strong> - 3-4 חוליות</li>
+                    <li><strong>Semispinalis</strong> - 5-6 חוליות</li>
+                </ul>
+                <p><strong>Action:</strong></p>
+                <ul>
+                    <li><strong>דו-צדדי:</strong> Extension</li>
+                    <li><strong>חד-צדדי:</strong> Rotation</li>
+                </ul>
+            </div>
+
+            <h4>Quadratus Lumborum (QL) - המרובע המותני</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Iliac Crest</p>
+                <p><strong>Insertion:</strong> צלע 12, Transverse Processes L1-L4</p>
+                <p><strong>Action:</strong></p>
+                <ul>
+                    <li><strong>דו-צדדי:</strong> Extension</li>
+                    <li><strong>חד-צדדי:</strong> Side Flexion, הרמת אגן חד-צדדי (Lateral Pelvic Tilt)</li>
+                </ul>
+            </div>
+        </section>
+        -->
+
+        <!-- גף עליון -->
+        <section id="upper-limb" class="section">
+            <h2>💪 גף עליון - Upper Limb</h2>
+            
+            <h3>חגורת הכתפיים (Shoulder Girdle)</h3>
+            
+            <h4>עצמות חגורת הכתפיים</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>Clavicle (עצם הבריח)</h4>
+                    <p><strong>סוג:</strong> עצם ארוכה בצורת S</p>
+                    <p><strong>מיקום:</strong> מחברת את השכמה לעצם החזה</p>
+                    <p><strong>תפקידים:</strong></p>
+                    <ul>
+                        <li>מרחיקה את הכתף מהגוף</li>
+                        <li>מאפשרת טווח תנועה רחב</li>
+                        <li>מגינה על כלי דם ועצבים</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Scapula (שכמה)</h4>
+                    <p><strong>סוג:</strong> עצם שטוחה משולשת</p>
+                    <p><strong>מיקום:</strong> על צלעות 2-7</p>
+                    <p><strong>נקודות חשובות:</strong></p>
+                    <ul>
+                        <li><strong>Spine of Scapula</strong> - קו בולט אחורי</li>
+                        <li><strong>Acromion</strong> - קצה הכתף</li>
+                        <li><strong>Coracoid Process</strong> - בליטה קדמית</li>
+                        <li><strong>Glenoid Fossa</strong> - שקע לראש ההומרוס</li>
+                        <li><strong>Supraspinous Fossa</strong> - מעל ה-Spine</li>
+                        <li><strong>Infraspinous Fossa</strong> - מתחת ל-Spine</li>
+                        <li><strong>Subscapular Fossa</strong> - הפנים הקדמיים</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>מפרקי חגורת הכתפיים</h4>
+            <table>
+                <tr>
+                    <th>מפרק</th>
+                    <th>עצמות</th>
+                    <th>סוג</th>
+                </tr>
+                <tr>
+                    <td><strong>Sternoclavicular</strong></td>
+                    <td>Sternum + Clavicle</td>
+                    <td>Saddle - החיבור היחיד של הגף העליון לשלד הציר!</td>
+                </tr>
+                <tr>
+                    <td><strong>Acromioclavicular (AC)</strong></td>
+                    <td>Acromion + Clavicle</td>
+                    <td>Gliding</td>
+                </tr>
+                <tr>
+                    <td><strong>Scapulothoracic</strong></td>
+                    <td>Scapula + בית החזה</td>
+                    <td>מפרק פונקציונלי (לא מפרק אמיתי)</td>
+                </tr>
+                <tr>
+                    <td><strong>Glenohumeral</strong></td>
+                    <td>Glenoid Fossa + Head of Humerus</td>
+                    <td>Ball & Socket - מפרק הכתף עצמו</td>
+                </tr>
+            </table>
+
+            <h3>תנועות השכמה (Scapular Movements)</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Elevation / Depression</h4>
+                    <p><strong>Elevation:</strong> הרמת שכמות כלפי מעלה</p>
+                    <p><strong>Depression:</strong> הורדת שכמות כלפי מטה</p>
+                </div>
+                <div class="card">
+                    <h4>Protraction / Retraction</h4>
+                    <p><strong>Protraction (Abduction):</strong> הרחקת שכמות קדימה</p>
+                    <p><strong>Retraction (Adduction):</strong> קירוב שכמות אחורה</p>
+                </div>
+                <div class="card">
+                    <h4>Upward / Downward Rotation</h4>
+                    <p><strong>Upward Rotation:</strong> סיבוב השכמה כך שה-Glenoid Fossa פונה כלפי מעלה</p>
+                    <p><strong>Downward Rotation:</strong> חזרה למנח האנטומי</p>
+                </div>
+            </div>
+
+            <h3>Scapulohumeral Rhythm (מקצב שכמה-זרוע)</h3>
+            <div class="important">
+                <p><strong>יחס 2:1</strong> - עבור כל 3 מעלות של הרחקת זרוע:</p>
+                <ul>
+                    <li>2 מעלות מתרחשות במפרק הכתף (Glenohumeral)</li>
+                    <li>1 מעלה מתרחשת בשכמה (Scapulothoracic)</li>
+                </ul>
+                <p><strong>דוגמה:</strong> הרחקה של 180° (זרוע למעלה)</p>
+                <ul>
+                    <li>120° במפרק הכתף</li>
+                    <li>60° תנועת שכמה</li>
+                </ul>
+                <p><strong>חשיבות:</strong> הפרעה למקצב זה עלולה לגרום לפתולוגיות כתף!</p>
+            </div>
+
+            <h3>שרירי השכמה</h3>
+
+            <h4>Trapezius (טרפז)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> בסיס הגולגולת עד חולייה T12</p><br>
+                <p><strong>Insertion:</strong> Spine of Scapula, Acromion, 1/3 לטרלי של Clavicle</p> <br
+                <p><strong>שלושה חלקים:</strong></p>
+                <ul>
+                    <li><strong>Upper Trapezius:</strong> Elevation, Upward Rotation</li>
+                    <li><strong>Middle Trapezius:</strong> Retraction</li>
+                    <li><strong>Lower Trapezius:</strong> Depression, Upward Rotation</li>
+                </ul>
+                <p><strong>פעולה מרכזית של כל השריר:</strong> Retraction (קירוב שכמות)</p>
+            </div>
+
+            <h4>Rhomboids (מעוינים) - Major & Minor</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> C7-T5</p>
+                <p><strong>Insertion:</strong> Medial Border of Scapula</p>
+                <p><strong>Action:</strong> Retraction, Downward Rotation</p>
+            </div>
+
+            <h4>Serratus Anterior (משור קדמי)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> 8 צלעות עליונות (צד לטרלי)</p>
+                <p><strong>Insertion:</strong> Medial Border of Scapula</p>
+                <p><strong>Action:</strong> Protraction, Upward Rotation, מצמיד את השכמה לבית החזה</p>
+                <p><strong>חשיבות:</strong> מונע "שכמה צפה" (Scapula Winging)</p>
+                <p><strong>עצבוב:</strong> Long Thoracic Nerve - נזק עלול לגרום לשכמה צפה</p>
+            </div>
+
+            <h3>מפרק הכתף (Glenohumeral Joint)</h3>
+            
+            <div class="highlight-box">
+                <h4>מאפייני המפרק</h4>
+                <ul>
+                    <li><strong>סוג:</strong> Ball & Socket - רב-צירי</li>
+                    <li><strong>תנועתיות:</strong> טווח תנועה רחב ביותר בגוף!</li>
+                    <li><strong>יציבות:</strong> המפרק הכי פחות יציב בגוף (פריקה נפוצה!)</li>
+                    <li><strong>קפסולה:</strong> רפויה מאוד - מאפשרת תנועה אך על חשבון יציבות</li>
+                    <li><strong>Labrum:</strong> טבעת סיבית המעמיקה את השקע</li>
+                    <li><strong>חוסר התאמה מבנית:</strong> ראש ההומרוס גדול הרבה יותר מהשקע</li>
+                </ul>
+            </div>
+
+            <h3>Rotator Cuff (השרוול המסובב) - מייצבי הכתף</h3>
+            
+            <div class="important">
+                <h4>⭐ ארבעת שרירי ה-Rotator Cuff - חובה לדעת!</h4>
+                <p>שרירים אלו מייצבים את ראש ההומרוס בשקע ומונעים פריקה</p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Supraspinatus<br>(סופרספינטוס)</strong></td>
+                    <td>Supraspinous Fossa</td>
+                    <td>Greater Tubercle</td>
+                    <td>Abduction, ייצוב</td>
+                </tr>
+                <tr>
+                    <td><strong>Infraspinatus<br>(אינפרספינטוס)</strong></td>
+                    <td>Infraspinous Fossa</td>
+                    <td>Greater Tubercle</td>
+                    <td>Lateral Rotation, ייצוב</td>
+                </tr>
+                <tr>
+                    <td><strong>Teres Minor<br>(טרס מינור)</strong></td>
+                    <td>Lateral Border of Scapula</td>
+                    <td>Greater Tubercle</td>
+                    <td>Lateral Rotation, ייצוב</td>
+                </tr>
+                <tr>
+                    <td><strong>Subscapularis<br>(תת שכמתי)</strong></td>
+                    <td>Subscapular Fossa</td>
+                    <td>Lesser Tubercle</td>
+                    <td>Medial Rotation, ייצוב</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <h4>⚠️ פתולוגיות Rotator Cuff</h4>
+                <ul>
+                    <li><strong>דלקת/קרע בגיד</strong> - הנפוץ ביותר: Supraspinatus</li>
+                    <li><strong>Impingement Syndrome (תסמונת התפס)</strong> - לחיצה על הגידים מתחת ל-Acromion</li>
+                    <li><strong>גורמים:</strong> שימוש יתר, חוסר איזון שרירי, טכניקה לקויה</li>
+                </ul>
+            </div>
+
+            <h3>שרירי הכתף העיקריים</h3>
+
+            <h4>Deltoid (שריר הכתף)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Spine & Acromion of Scapula, 1/3 לטרלי של Clavicle</p>
+                <p><strong>Insertion:</strong> Deltoid Tuberosity (באמצע ההומרוס)</p>
+                <p><strong>שלושה חלקים:</strong></p>
+                <ul>
+                    <li><strong>Anterior Deltoid:</strong> Flexion, Medial Rotation, Horizontal Adduction</li>
+                    <li><strong>Middle Deltoid:</strong> Abduction (פעולה עיקרית)</li>
+                    <li><strong>Posterior Deltoid:</strong> Extension, Lateral Rotation, Horizontal Abduction</li>
+                </ul>
+                <p><strong>פעולה מרכזית:</strong> Abduction של הכתף</p>
+            </div>
+
+            <h4>Pectoralis Major (חזה)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> 2/3 מדיאלי של Clavicle, Sternum, 6 צלעות עליונות</p>
+                <p><strong>Insertion:</strong> Bicipital Groove של Humerus</p>
+                <p><strong>חלקים:</strong></p>
+                <ul>
+                    <li><strong>Upper (Clavicular):</strong> Flexion</li>
+                    <li><strong>Lower (Sternal):</strong> Extension, Adduction</li>
+                </ul>
+                <p><strong>פעולות משותפות:</strong> Adduction, Medial Rotation, Horizontal Adduction</p>
+            </div>
+
+            <h4>Latissimus Dorsi (רחב גבי)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> T7-L5, Sacrum, Thoracolumbar Fascia, Iliac Crest, 4 צלעות תחתונות</p>
+                <p><strong>Insertion:</strong> Bicipital Groove</p>
+                <p><strong>Action:</strong> Extension, Adduction, Medial Rotation</p>
+                <p><strong>ייחודיות:</strong> מחבר את הגף העליון לאגן והעמוד התחתון</p>
+            </div>
+
+            <h4>Teres Major (טרס מייג'ור)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Lateral Border of Scapula (חלק תחתון)</p>
+                <p><strong>Insertion:</strong> Bicipital Groove</p>
+                <p><strong>Action:</strong> Extension, Adduction, Medial Rotation</p>
+                <p><strong>הערה:</strong> לא חלק מה-Rotator Cuff!</p>
+            </div>
+
+            <h3>הזרוע (Arm)</h3>
+
+            <h4>Humerus (עצם הזרוע)</h4>
+            <div class="highlight-box">
+                <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                <ul>
+                    <li><strong>Head of Humerus</strong> - ראש כדורי</li>
+                    <li><strong>Greater Tubercle</strong> - בליטה לטרלית</li>
+                    <li><strong>Lesser Tubercle</strong> - בליטה אנטריורית</li>
+                    <li><strong>Bicipital Groove</strong> - חריץ בין הבליטות</li>
+                </ul>
+                <p><strong>דיאפיזה:</strong></p>
+                <ul>
+                    <li><strong>Deltoid Tuberosity</strong> - אחיזת הדלטואיד</li>
+                </ul>
+                <p><strong>אפיפיזה דיסטלית:</strong></p>
+                <ul>
+                    <li><strong>Medial Epicondyle</strong> - בליטה מדיאלית</li>
+                    <li><strong>Lateral Epicondyle</strong> - בליטה לטרלית</li>
+                    <li><strong>Olecranon Fossa</strong> - שקע אחורי</li>
+                </ul>
+            </div>
+
+            <h3>מפרק המרפק (Elbow)</h3>
+            
+            <div class="card">
+                <p><strong>למעשה שני מפרקים:</strong></p>
+                <ul>
+                    <li><strong>Humeroulnar Joint:</strong> Humerus + Ulna</li>
+                    <li><strong>Humeroradial Joint:</strong> Humerus + Radius</li>
+                </ul>
+                <p><strong>סוג:</strong> Hinge - חד-צירי</p>
+                <p><strong>תנועות:</strong> Flexion/Extension בלבד</p>
+                <p><strong>רצועות:</strong> LCL (לטרלי), MCL (מדיאלי), Annular Ligament (מקיפה את ראש הרדיוס)</p>
+            </div>
+
+            <h3>האמה (Forearm)</h3>
+
+            <h4>עצמות האמה</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>Ulna (אולנה) - מדיאלי</h4>
+                    <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                    <ul>
+                        <li><strong>Olecranon Process</strong> - בליטה אחורית גדולה</li>
+                        <li><strong>Ulnar Tuberosity</strong></li>
+                    </ul>
+                    <p><strong>אפיפיזה דיסטלית:</strong></p>
+                    <ul>
+                        <li><strong>Ulnar Styloid Process</strong></li>
+                        <li><strong>לא משתתפת</strong> במפרק שורש כף היד!</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Radius (רדיוס) - לטרלי</h4>
+                    <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                    <ul>
+                        <li><strong>Head of Radius</strong></li>
+                        <li><strong>Radial Tuberosity</strong></li>
+                    </ul>
+                    <p><strong>אפיפיזה דיסטלית:</strong></p>
+                    <ul>
+                        <li><strong>Radial Styloid Process</strong></li>
+                        <li><strong>משתתפת</strong> במפרק שורש כף היד!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>מפרק האמה (Radioulnar Joints)</h4>
+            <div class="card">
+                <p><strong>Proximal Radioulnar Joint</strong> + <strong>Distal Radioulnar Joint</strong></p>
+                <p><strong>סוג:</strong> Pivot</p>
+                <p><strong>תנועות:</strong></p>
+                <ul>
+                    <li><strong>Supination (סופינציה):</strong> כף היד פונה למעלה - המנח האנטומי</li>
+                    <li><strong>Pronation (פרונציה):</strong> כף היד פונה למטה - הרדיוס חוצה את האולנה</li>
+                </ul>
+            </div>
+
+            <h3>שרירי המרפק</h3>
+
+            <h4>מכופפי המרפק</h4>
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Biceps Brachii<br>(דו ראשי זרועי)</strong></td>
+                    <td><strong>Long Head:</strong> Glenoid Fossa<br><strong>Short Head:</strong> Coracoid Process</td>
+                    <td>Radial Tuberosity</td>
+                    <td>Flexion במרפק, Supination, מסייע ב-Flexion בכתף</td>
+                </tr>
+                <tr>
+                    <td><strong>Brachialis<br>(שריר הזרוע)</strong></td>
+                    <td>חלק אמצעי קדמי של Humerus</td>
+                    <td>Ulnar Tuberosity</td>
+                    <td>Flexion במרפק - המכופף החזק ביותר!</td>
+                </tr>
+                <tr>
+                    <td><strong>Brachioradialis<br>(ברכיורדיאליס)</strong></td>
+                    <td>חלק דיסטלי לטרלי של Humerus</td>
+                    <td>אפיפיזה דיסטלית של Radius</td>
+                    <td>Flexion במרפק (במנח אמצע), מסייע ב-Supination/Pronation</td>
+                </tr>
+            </table>
+
+            <h4>פושטי המרפק</h4>
+            <div class="card">
+                <h4>Triceps Brachii (תלת ראשי)</h4>
+                <p><strong>שלושה ראשים:</strong></p>
+                <ul>
+                    <li><strong>Long Head:</strong> Lateral Border of Scapula</li>
+                    <li><strong>Lateral Head:</strong> Posterior Humerus (עליון)</li>
+                    <li><strong>Medial Head:</strong> Posterior Humerus (תחתון)</li>
+                </ul>
+                <p><strong>Insertion:</strong> Olecranon Process</p>
+                <p><strong>Action:</strong> Extension במרפק, Long Head גם מסייע ב-Extension בכתף</p>
+            </div>
+        </section>
+
+        <!-- גף תחתון 
+        <section id="lower-limb" class="section">
+            <h2>🦵 גף תחתון - Lower Limb</h2>
+            
+            <h3>חגורת האגן (Pelvic Girdle)</h3>
+            
+            <div class="highlight-box">
+                <h4>עצמות האגן - Os Coxa/Pelvis</h4>
+                <p>האגן בנוי מ-<strong>3 עצמות מאוחות</strong> (מכל צד):</p>
+            </div>
+
+            <h4>שלוש עצמות האגן</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>Ilium (העלה הגדול)</h4>
+                    <p><strong>העצם הגדולה והעליונה</strong></p>
+                    <p><strong>נקודות חשובות:</strong></p>
+                    <ul>
+                        <li><strong>Iliac Crest</strong> - השוליים העליונים</li>
+                        <li><strong>ASIS (Anterior Superior Iliac Spine)</strong></li>
+                        <li><strong>PSIS (Posterior Superior Iliac Spine)</strong></li>
+                        <li><strong>Iliac Fossa</strong> - שקע פנימי</li>
+                        <li><strong>Gluteal Fossa</strong> - משטח אחורי</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Ischium (עצם הישיבה)</h4>
+                    <p><strong>העצם האחורית והתחתונה</strong></p>
+                    <p><strong>נקודות חשובות:</strong></p>
+                    <ul>
+                        <li><strong>Ischial Tuberosity</strong> - גבשושית הישיבה, אזור גרמי וגס</li>
+                        <li>זו הנקודה שעליה אנו יושבים!</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Pubis (עצם החיק)</h4>
+                    <p><strong>העצם הקדמית והתחתונה</strong></p>
+                    <p><strong>נקודות חשובות:</strong></p>
+                    <ul>
+                        <li><strong>Pubic Symphysis</strong> - המפרק בין שתי עצמות החיק (Cartilaginous Joint)</li>
+                        <li>שני ענפים - Superior Ramus ו-Inferior Ramus</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Acetabulum (השקע)</h4>
+            <div class="info">
+                <p><strong>תולדה של שלושת חלקי האגן</strong> - השקע בו נכנס ראש עצם הירך</p>
+                <p>יוצר את מפרק הירך (Hip Joint)</p>
+            </div>
+
+            <h4>Sacroiliac Joint (SI Joint)</h4>
+            <div class="card">
+                <p><strong>מפרק בין Sacrum לבין Ilium</strong></p>
+                <p><strong>סוג:</strong> Cartilaginous - תנועה מוגבלת מאוד</p>
+                <p><strong>תפקיד:</strong> העברת משקל הגוף העליון לאגן ולגפיים התחתונות</p>
+                <p><strong>פתולוגיה:</strong> SI Joint Dysfunction - כאב אגן תחתון/ישבן</p>
+            </div>
+
+            <h3>מפרק הירך (Hip Joint)</h3>
+            
+            <div class="highlight-box">
+                <p><strong>סוג:</strong> Ball & Socket - רב-צירי</p>
+                <p><strong>עצמות:</strong> Head of Femur + Acetabulum</p>
+                <p><strong>מאפיינים:</strong></p>
+                <ul>
+                    <li><strong>יציבות גבוהה</strong> - בניגוד לכתף!</li>
+                    <li><strong>התאמה מבנית טובה</strong> - ראש הפמור יושב עמוק בשקע</li>
+                    <li><strong>Labrum</strong> - טבעת סיבית המעמיקה את השקע</li>
+                    <li><strong>קפסולה הדוקה</strong> ורצועות חזקות</li>
+                    <li><strong>שרירים מייצבים רבים</strong></li>
+                </ul>
+            </div>
+
+            <h3>Femur (עצם הירך)</h3>
+            
+            <div class="card">
+                <p><strong>העצם הארוכה, החזקה והכבדה ביותר בגוף!</strong></p>
+                <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                <ul>
+                    <li><strong>Head of Femur</strong> - ראש כדורי</li>
+                    <li><strong>Neck</strong> - צוואר הפמור</li>
+                    <li><strong>Greater Trochanter</strong> - בליטה לטרלית גדולה</li>
+                    <li><strong>Lesser Trochanter</strong> - בליטה מדיאלית קטנה</li>
+                </ul>
+                <p><strong>דיאפיזה:</strong></p>
+                <ul>
+                    <li><strong>Linea Aspera</strong> - קו מחוספס אחורי</li>
+                </ul>
+                <p><strong>אפיפיזה דיסטלית:</strong></p>
+                <ul>
+                    <li><strong>Medial Condyle</strong></li>
+                    <li><strong>Lateral Condyle</strong></li>
+                    <li><strong>Patellar Surface</strong> - משטח למפרק הפיקה</li>
+                </ul>
+            </div>
+
+            <h3>שרירי הירך</h3>
+
+            <h4>Iliopsoas (כסל מותן)</h4>
+            <div class="card">
+                <p><strong>מורכב משני שרירים:</strong></p>
+                <ul>
+                    <li><strong>Psoas Major:</strong> Origin - T12-L5</li>
+                    <li><strong>Iliacus:</strong> Origin - Iliac Fossa</li>
+                </ul>
+                <p><strong>Insertion:</strong> Lesser Trochanter</p>
+                <p><strong>Action:</strong> Flexion בירך, Lateral Rotation, APT, מגדיל לורדוזה מותנית</p>
+                <p><strong>חשיבות:</strong> המכופף העיקרי של הירך!</p>
+            </div>
+
+            <h4>Gluteus (שרירי העכוז)</h4>
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Gluteus Maximus<br>(עכוז גדול)</strong></td>
+                    <td>Sacrum, Gluteal Fossa</td>
+                    <td>Gluteal Tuberosity, ITB</td>
+                    <td>Extension, Lateral Rotation, PPT</td>
+                </tr>
+                <tr>
+                    <td><strong>Gluteus Medius<br>(עכוז בינוני)</strong></td>
+                    <td>Gluteal Fossa (חלק לטרלי)</td>
+                    <td>Greater Trochanter</td>
+                    <td>Abduction, ייצוב האגן בהליכה/ריצה</td>
+                </tr>
+                <tr>
+                    <td><strong>Gluteus Minimus<br>(עכוז קטן)</strong></td>
+                    <td>Gluteal Fossa (חלק לטרלי תחתון)</td>
+                    <td>Greater Trochanter</td>
+                    <td>Abduction, Medial Rotation</td>
+                </tr>
+            </table>
+
+            <div class="important">
+                <h4>💡 חשיבות ה-Gluteus Medius</h4>
+                <p>מייצב את האגן כאשר רגל אחת מתרוממת מהקרקע (בהליכה/ריצה)</p>
+                <p>חולשה עלולה לגרום ל-Trendelenburg Gait - נפילת האגן הצידה</p>
+            </div>
+
+            <h4>Tensor Fasciae Latae (TFL)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> ASIS</p>
+                <p><strong>Insertion:</strong> ITB (Iliotibial Band)</p>
+                <p><strong>Action:</strong> Flexion, Abduction, Medial Rotation</p>
+            </div>
+
+            <h4>ITB - Iliotibial Band</h4>
+            <div class="info">
+                <p><strong>פאשיה עבה</strong> העוברת לאורך הצד הלטרלי של הירך מה-Ilium ועד ה-Tibia</p>
+                <p><strong>מחוברים אליה:</strong> TFL ו-Gluteus Maximus</p>
+                <p><strong>פתולוגיה נפוצה:</strong> ITBS (Iliotibial Band Syndrome) - דלקת, נפוצה אצל רצים</p>
+            </div>
+
+            <h4>Hip Adductors (מקרבי הירך)</h4>
+            <div class="card">
+                <p><strong>חמישה שרירים:</strong> Pectineus, Adductor Longus, Adductor Brevis, Adductor Magnus, Gracilis</p>
+                <p><strong>Origin:</strong> Pubis</p>
+                <p><strong>Insertion:</strong> לאורך הצד המדיאלי של Femur (Gracilis - על Tibia מדיאלי)</p>
+                <p><strong>Action:</strong> Adduction של הירך</p>
+                <p><strong>Gracilis:</strong> היחיד שחוצה את מפרק הברך, גם מכופף ברך</p>
+            </div>
+
+            <h3>מפרק הברך (Knee Joint)</h3>
+            
+            <div class="highlight-box">
+                <p><strong>המפרק המורכב ביותר בגוף!</strong></p>
+                <p><strong>למעשה שני מפרקים:</strong></p>
+                <ul>
+                    <li><strong>Tibiofemoral Joint:</strong> Femur + Tibia - הינג' חד-צירי</li>
+                    <li><strong>Patellofemoral Joint:</strong> Patella + Femur - החלקה</li>
+                </ul>
+            </div>
+
+            <h4>מבנה ייצוב הברך</h4>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>רצועות צולבות</h4>
+                    <ul>
+                        <li><strong>ACL (Anterior Cruciate Ligament)</strong> - מונעת תזוזה קדמית של הטיביה</li>
+                        <li><strong>PCL (Posterior Cruciate Ligament)</strong> - מונעת תזוזה אחורית של הטיביה</li>
+                    </ul>
+                    <p><strong>מונעות עודף תנועה סגיטלית והוריזונטלית</strong></p>
+                </div>
+                <div class="card">
+                    <h4>רצועות צידיות</h4>
+                    <ul>
+                        <li><strong>MCL (Medial Collateral Ligament)</strong> - מונעת קריסה פנימה</li>
+                        <li><strong>LCL (Lateral Collateral Ligament)</strong> - מונעת קריסה החוצה</li>
+                    </ul>
+                    <p><strong>מונעות תנועה מדיאלית-לטרלית</strong></p>
+                </div>
+                <div class="card">
+                    <h4>מניסקוסים (Menisci)</h4>
+                    <ul>
+                        <li><strong>Medial Meniscus</strong> - מניסקוס פנימי</li>
+                        <li><strong>Lateral Meniscus</strong> - מניסקוס חיצוני</li>
+                    </ul>
+                    <p><strong>סוג:</strong> סחוס סיבי</p>
+                    <p><strong>תפקידים:</strong> בולם זעזועים, פיזור עומסים, מניעת חיכוך, תאום בין הפמור לטיביה</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h4>⚠️ פציעות נפוצות בברך</h4>
+                <ul>
+                    <li><strong>קרע ב-ACL</strong> - הנפוץ ביותר, טיפול לרוב ניתוחי</li>
+                    <li><strong>קרע במניסקוס</strong> - כאב, נפיחות, ברך "נעולה"</li>
+                    <li><strong>פריקת פיקה (Patellar Dislocation)</strong></li>
+                    <li><strong>Patellofemoral Pain Syndrome</strong> - כאב מול הברך</li>
+                    <li><strong>Osgood-Schlatter</strong> - דלקת בגבשושית הטיביה, נפוץ אצל מתבגרים פעילים</li>
+                </ul>
+            </div>
+
+            <h3>השוק (Lower Leg)</h3>
+
+            <h4>עצמות השוק</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>Tibia (שוקה) - מדיאלי</h4>
+                    <p><strong>העצם הנושאת משקל!</strong></p>
+                    <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                    <ul>
+                        <li><strong>Medial Condyle</strong></li>
+                        <li><strong>Lateral Condyle</strong></li>
+                        <li><strong>Tibial Plateau</strong> - משטח עליון</li>
+                        <li><strong>Tibial Tuberosity</strong> - גבשושית הטיביה (אחיזת גיד הפיקה)</li>
+                    </ul>
+                    <p><strong>דיאפיזה:</strong> חדה וטריזית</p>
+                    <p><strong>אפיפיזה דיסטלית:</strong></p>
+                    <ul>
+                        <li><strong>Medial Malleolus</strong> - פטישון פנימי</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Fibula (שוקית) - לטרלי</h4>
+                    <p><strong>לא נושאת משקל!</strong></p>
+                    <p><strong>אפיפיזה פרוקסימלית:</strong></p>
+                    <ul>
+                        <li><strong>Head of Fibula</strong></li>
+                        <li><strong>לא משתתפת</strong> במפרק הברך!</li>
+                    </ul>
+                    <p><strong>אפיפיזה דיסטלית:</strong></p>
+                    <ul>
+                        <li><strong>Lateral Malleolus</strong> - פטישון חיצוני</li>
+                        <li><strong>משתתפת</strong> במפרק הקרסול</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>שרירי הירך (Thigh Muscles)</h3>
+
+            <h4>Quadriceps Femoris (ארבע ראשי)</h4>
+            <div class="important">
+                <p><strong>ארבעה ראשים - המושטים העיקריים של הברך!</strong></p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Rectus Femoris</strong></td>
+                    <td>AIIS (מתחת ל-ASIS)</td>
+                    <td>Tibial Tuberosity (דרך Patellar Tendon)</td>
+                    <td>Extension ברך, מסייע ב-Flexion בירך</td>
+                </tr>
+                <tr>
+                    <td><strong>Vastus Lateralis</strong></td>
+                    <td>חלק אחורי לטרלי של Femur</td>
+                    <td>Tibial Tuberosity</td>
+                    <td>Extension ברך</td>
+                </tr>
+                <tr>
+                    <td><strong>Vastus Medialis</strong></td>
+                    <td>חלק אחורי מדיאלי של Femur</td>
+                    <td>Tibial Tuberosity</td>
+                    <td>Extension ברך</td>
+                </tr>
+                <tr>
+                    <td><strong>Vastus Intermedius</strong></td>
+                    <td>2/3 קדמיים של Femur</td>
+                    <td>Tibial Tuberosity</td>
+                    <td>Extension ברך</td>
+                </tr>
+            </table>
+
+            <div class="info">
+                <h4>💡 הבנת הגידים</h4>
+                <ul>
+                    <li><strong>Quadriceps Tendon</strong> - מחבר את הקוודריצפס לפיקה</li>
+                    <li><strong>Patella (פיקה)</strong> - עצם ססמואידית השזורה בתוך הגיד</li>
+                    <li><strong>Patellar Tendon</strong> - מחבר את הפיקה ל-Tibial Tuberosity</li>
+                </ul>
+            </div>
+
+            <h4>Hamstrings (שרירי הירך האחורי)</h4>
+            <div class="important">
+                <p><strong>שלושה שרירים - המכופפים העיקריים של הברך!</strong></p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>שריר</th>
+                    <th>Origin</th>
+                    <th>Insertion</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><strong>Biceps Femoris</strong></td>
+                    <td><strong>Long Head:</strong> Ischial Tuberosity<br><strong>Short Head:</strong> Femur אחורי תחתון</td>
+                    <td>Head of Fibula</td>
+                    <td>Flexion ברך, מסייע ב-Extension בירך</td>
+                </tr>
+                <tr>
+                    <td><strong>Semitendinosus</strong></td>
+                    <td>Ischial Tuberosity</td>
+                    <td>Medial Condyle of Tibia</td>
+                    <td>Flexion ברך, מסייע ב-Extension בירך</td>
+                </tr>
+                <tr>
+                    <td><strong>Semimembranosus</strong></td>
+                    <td>Ischial Tuberosity</td>
+                    <td>Medial Condyle of Tibia</td>
+                    <td>Flexion ברך, מסייע ב-Extension בירך</td>
+                </tr>
+            </table>
+
+            <h3>מפרק הקרסול (Ankle Joint)</h3>
+
+            <div class="card">
+                <p><strong>עצמות:</strong> Tibia + Fibula + Talus</p>
+                <p><strong>סוג:</strong> Hinge - חד-צירי</p>
+                <p><strong>תנועות במישור סגיטלי:</strong></p>
+                <ul>
+                    <li><strong>Dorsiflexion (כפיפה גבית)</strong> - הרמת אצבעות הרגל כלפי מעלה</li>
+                    <li><strong>Plantarflexion (כפיפת כפית)</strong> - לחיצת אצבעות הרגל כלפי מטה ("פוינט")</li>
+                </ul>
+                <p><strong>פתולוגיה נפוצה:</strong> Ankle Sprain - נקע בקרסול (פציעה ברצועות)</p>
+            </div>
+
+            <h4>תנועות בכף הרגל</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>Inversion / Eversion</h4>
+                    <ul>
+                        <li><strong>Inversion (אינברסיה):</strong> הפניית כף הרגל פנימה</li>
+                        <li><strong>Eversion (איברסיה):</strong> הפניית כף הרגל החוצה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>שרירי השוק</h3>
+
+            <h4>Gastrocnemius (תאומים)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Condyles of Femur (חלק אחורי) - <strong>חוצה שני מפרקים!</strong></p>
+                <p><strong>Insertion:</strong> Calcaneus (משטח אחורי) דרך גיד אכילס</p>
+                <p><strong>Action:</strong> Plantarflexion בקרסול, מסייע ב-Flexion בברך</p>
+                <p><strong>שני ראשים:</strong> Medial Head + Lateral Head</p>
+            </div>
+
+            <h4>Soleus (סוליה)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Tibia + Fibula (חלק אחורי)</p>
+                <p><strong>Insertion:</strong> Calcaneus דרך גיד אכילס</p>
+                <p><strong>Action:</strong> Plantarflexion בקרסול</p>
+                <p><strong>ייחודיות:</strong> חוצה רק מפרק אחד (הקרסול)</p>
+            </div>
+
+            <div class="info">
+                <h4>💡 Achilles Tendon (גיד אכילס)</h4>
+                <p><strong>הגיד החזק והעבה ביותר בגוף!</strong></p>
+                <p>מחבר את Gastrocnemius + Soleus ל-Calcaneus</p>
+                <p><strong>פתולוגיה:</strong> קרע בגיד אכילס - פציעה חמורה הדורשת טיפול ניתוחי</p>
+            </div>
+
+            <h4>Tibialis Anterior (שוק קדמי)</h4>
+            <div class="card">
+                <p><strong>Origin:</strong> Tibia (חלק קדמי)</p>
+                <p><strong>Insertion:</strong> עצמות שורש כף הרגל ומסרק 1</p>
+                <p><strong>Action:</strong> Dorsiflexion בקרסול</p>
+                <p><strong>תפקיד:</strong> מרים את כף הרגל בהליכה</p>
+            </div>
+        </section>
+        -->
+        <!-- פעילות גופנית -->
+        <section id="exercise" class="section">
+            <h2>🏃 פעילות גופנית ובריאות</h2>
+            
+            <div class="highlight-box">
+                <h3>חשיבות הפעילות הגופנית</h3>
+                <p>"הגוף נועד לתנועה! כל גוף חי, רקמה, איבר או מערכת שאינם נמצאים בפעילות, חלים בהם תהליכים ניווניים."</p>
+            </div>
+
+            <h3>יתרונות בריאותיים של פעילות גופנית</h3>
+
+            <h4>בריאות לב וכלי דם</h4>
+            <ul>
+                <li>הפחתת סיכון למחלות לב כליליות</li>
+                <li>הפחתת לחץ דם</li>
+                <li>שיפור פרופיל ליפידים (כולסטרול)</li>
+                <li>הפחתת סיכון לשבץ מוחי</li>
+            </ul>
+
+            <h4>בריאות מטבולית</h4>
+            <ul>
+                <li>מניעת וניהול סוכרת סוג 2</li>
+                <li>שיפור רגישות לאינסולין</li>
+                <li>הפחתת תסמונת מטבולית</li>
+                <li>שמירת משקל בריא</li>
+            </ul>
+
+            <h4>בריאות השלד והשרירים</h4>
+            <ul>
+                <li>חיזוק עצמות ומניעת אוסטאופורוזיס</li>
+                <li>שמירת מסת שריר (מניעת סרקופניה)</li>
+                <li>שיפור כוח ותפקוד</li>
+                <li>הפחתת סיכון לנפילות</li>
+            </ul>
+
+            <h4>בריאות נפשית</h4>
+            <ul>
+                <li>הפחתת תסמיני דיכאון וחרדה</li>
+                <li>שיפור תפקוד קוגניטיבי</li>
+                <li>שיפור איכות שינה</li>
+                <li>הגברת תחושת רווחה</li>
+            </ul>
+
+            <h3>המלצות לפעילות גופנית - מבוגרים (18-64)</h3>
+
+            <div class="important">
+                <h4>הנחיות WHO ו-ACSM</h4>
+                
+                <h5>פעילות אירובית:</h5>
+                <ul>
+                    <li><strong>150-300 דקות בשבוע</strong> בעצימות בינונית, או</li>
+                    <li><strong>75-150 דקות בשבוע</strong> בעצימות גבוהה, או</li>
+                    <li>שילוב שווה ערך של השניים</li>
+                </ul>
+
+                <h5>אימוני התנגדות/כוח-שריר:</h5>
+                <ul>
+                    <li><strong>לפחות פעמיים בשבוע</strong></li>
+                    <li>כל קבוצות השרירים העיקריות</li>
+                    <li>8-10 תרגילים, 1-3 סטים של 8-12 חזרות</li>
+                </ul>
+            </div>
+
+            <h3>אימוני התנגדות לילדים ובני נוער</h3>
+
+            <div class="info">
+                <h4>💡 מיתוסים נפוצים - ההפרכה!</h4>
+                
+                <table>
+                    <tr>
+                        <th>מיתוס</th>
+                        <th>האמת</th>
+                    </tr>
+                    <tr>
+                        <td>לא בטוח לילדים</td>
+                        <td>✓ בטוח עם הדרכה נכונה ופיקוח</td>
+                    </tr>
+                    <tr>
+                        <td>עוצר צמיחה</td>
+                        <td>✓ אין השפעות שליליות על גדילה, למעשה מחזק עצמות!</td>
+                    </tr>
+                    <tr>
+                        <td>צריך לחכות לגיל 12</td>
+                        <td>✓ גילאי 5-7 בטוחים להתחלה</td>
+                    </tr>
+                    <tr>
+                        <td>רק לאתלטים</td>
+                        <td>✓ יתרונות בריאותיים לכלל הילדים</td>
+                    </tr>
+                    <tr>
+                        <td>"מנפח" בנות</td>
+                        <td>✓ בגיל ההתבגרות השיפור בעיקרו עצבי, לא היפרטרופיה</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>עקרון "התמורה הפוחתת"</h3>
+
+            <div class="highlight-box">
+                <p><strong>"הורדת הסיכונים הבריאותיים הגדולה ביותר היא ע"י המעבר מלא לעשות כלום ללעשות משהו"</strong></p>
+                <p>- פרופסור סטיוארט פיליפס</p>
+                
+                <p><strong>משמעות:</strong> המעבר מחוסר פעילות מוחלט לפעילות מינימלית מביא את השיפור הבריאותי הגדול ביותר!</p>
+            </div>
+
+            <h3>מינון ותגובה (Dose-Response)</h3>
+
+            <h4>צעדים יומיים</h4>
+            <div class="card">
+                <ul>
+                    <li><strong>2,500-4,000 צעדים ביום:</strong> תועלת בריאותית משמעותית</li>
+                    <li><strong>6,000-8,000 צעדים ביום:</strong> תועלת "כמעט אופטימלית"</li>
+                    <li><strong>9,000-10,000 צעדים ביום:</strong> תועלת מקסימלית למרבית האנשים</li>
+                </ul>
+                <p><strong>חשוב:</strong> אפילו 1-2 ימים בשבוע של 8,000+ צעדים מביאים תועלת!</p>
+            </div>
+
+            <h4>אימוני כוח</h4>
+            <div class="card">
+                <p><strong>למניעת תחלואה ותמותה:</strong></p>
+                <ul>
+                    <li><strong>30-60 דקות בשבוע</strong> מספיקים לתועלת בריאותית משמעותית</li>
+                    <li><strong>1-2 פעמים בשבוע</strong> - הפחתת סיכון משמעותית</li>
+                    <li><strong>2-3 פעמים בשבוע</strong> - אופטימלי לרוב האוכלוסייה</li>
+                </ul>
+                <p><strong>לבניית שריר וכוח:</strong> נדרש נפח גבוה יותר (3-5+ פעמים בשבוע)</p>
+            </div>
+
+            <h3>אדפטציות לאימונים</h3>
+
+            <h4>אדפטציות אקוטיות (מיידיות)</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>במוח</h4>
+                    <ul>
+                        <li>הגברת זרימת דם</li>
+                        <li>הפרשת BDNF, דופמין, סרוטונין</li>
+                        <li>שיפור ערנות וזיכרון לטווח קצר</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>בשרירים</h4>
+                    <ul>
+                        <li>עלייה חדה בקליטת גלוקוז</li>
+                        <li>ללא תלות באינסולין</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>בלב וכלי דם</h4>
+                    <ul>
+                        <li>שחרור Nitric Oxide</li>
+                        <li>הרחבת כלי דם</li>
+                        <li>שיפור תפקוד אנדותלי</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>אדפטציות כרוניות (ארוכות טווח)</h4>
+            <div class="grid">
+                <div class="card">
+                    <h4>במוח</h4>
+                    <ul>
+                        <li>נוירוגנזה - יצירת תאי עצב חדשים</li>
+                        <li>שיפור תפקוד קוגניטיבי</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>במערכת הלב</h4>
+                    <ul>
+                        <li>עלייה בנפח הדם</li>
+                        <li>יצירת כלי דם חדשים</li>
+                        <li>שיפור בתפוקת הלב</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>בשרירים</h4>
+                    <ul>
+                        <li>יצירת מיטוכונדריה נוספות</li>
+                        <li>עלייה במסת שריר</li>
+                        <li>שיפור ניצול חמצן</li>
+                        <li>שיפור יכולת חמצון שומן</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>מטבולי</h4>
+                    <ul>
+                        <li>שיפור רגישות לאינסולין</li>
+                        <li>ירידה בשומן ויסצרלי</li>
+                        <li>שיפור תפקוד תאי בטא בלבלב</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Healthy Ageing - הזדקנות בריאה</h3>
+
+            <div class="important">
+                <h4>אין אנטי-אייג'ינג, יש Healthy Ageing</h4>
+                <p>אי אפשר לעצור את ההזדקנות, אבל אפשר להזדקן בצורה בריאה ותפקודית!</p>
+            </div>
+
+            <h4>שמירת מסת שריר וכוח</h4>
+            <div class="highlight-box">
+                <p><strong>Sarcopenia (סרקופניה):</strong> אובדן מסת שריר וכוח עם הגיל</p>
+                <p><strong>מניעה:</strong> אימוני התנגדות סדירים לאורך החיים</p>
+                <p><strong>תיאוריה:</strong> אדם ששמר על אורח חיים פעיל כל חייו, בגיל 80 יהיה דומה מבחינת כוח וצח"מ לאדם בגיל 50 שחי אורח חיים יושבני!</p>
+            </div>
+
+            <h4>שמירת צפיפות עצם</h4>
+            <div class="card">
+                <p><strong>פיק מסת עצם:</strong> גיל 20-30</p>
+                <p><strong>ירידה:</strong> מתחילה בגיל 30-40, מואצת אחרי גיל המעבר בנשים</p>
+                <p><strong>מניעה:</strong></p>
+                <ul>
+                    <li>פעילויות נושאות משקל</li>
+                    <li>אימוני התנגדות</li>
+                    <li>צריכה מספקת של סידן וויטמין D</li>
+                    <li>התחלה מוקדמת = בניית "בנק עצם" טוב</li>
+                </ul>
+            </div>
+
+            <h3>המלצות מיוחדות לגיל השלישי (65+)</h3>
+
+            <div class="important">
+                <p><strong>בנוסף להמלצות הכלליות:</strong></p>
+                <ul>
+                    <li><strong>אימוני איזון</strong> - לפחות 3 פעמים בשבוע (מניעת נפילות)</li>
+                    <li><strong>פעילויות תפקודיות</strong> - מדרגות, קימה מישיבה, וכו'</li>
+                    <li><strong>גמישות</strong> - מתיחות לפחות פעמיים בשבוע</li>
+                </ul>
+            </div>
+
+            <h3>סיכום - מסרים מרכזיים</h3>
+
+            <div class="highlight-box">
+                <ul>
+                    <li>✓ פעילות גופנית היא אחד הכלים החזקים ביותר לשמירה ושיפור הבריאות</li>
+                    <li>✓ תועלת משמעותית מתחילה כבר ממינון נמוך של פעילות</li>
+                    <li>✓ חשוב לשלב גם פעילות אירובית וגם אימוני כוח</li>
+                    <li>✓ ילדים ובני נוער צריכים ויכולים להתאמן בכוח - זה בטוח ויעיל!</li>
+                    <li>✓ לעולם לא מאוחר מדי להתחיל - גם בגיל מבוגר יש תועלת עצומה</li>
+                    <li>✓ עקביות חשובה יותר מעצימות - "משהו עדיף על כלום"</li>
+                    <li>✓ המטרה: Healthy Ageing - הזדקנות בריאה ותפקודית</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- סיכום מונחים -->
+        <section class="section">
+            <h2>📚 סיכום מונחים חיוניים</h2>
+
+            <h3>מונחי אנטומיה בסיסיים</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>כיוונים</h4>
+                    <ul>
+                        <li><strong>Anterior/Ventral</strong> - קדמי</li>
+                        <li><strong>Posterior/Dorsal</strong> - אחורי</li>
+                        <li><strong>Superior/Cephalic</strong> - עליון</li>
+                        <li><strong>Inferior/Caudal</strong> - תחתון</li>
+                        <li><strong>Medial</strong> - פנימי (קרוב לקו האמצע)</li>
+                        <li><strong>Lateral</strong> - חיצוני (רחוק מקו האמצע)</li>
+                        <li><strong>Proximal</strong> - קרוב לחיבור הגף</li>
+                        <li><strong>Distal</strong> - רחוק מחיבור הגף</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>חלקי עצם</h4>
+                    <ul>
+                        <li><strong>Epiphysis</strong> - קצה העצם</li>
+                        <li><strong>Diaphysis</strong> - גוף העצם</li>
+                        <li><strong>Metaphysis</strong> - בין הקצה לגוף</li>
+                        <li><strong>Periosteum<ul>
+                    <li><strong>Flexion (כפיפה)</strong> - הקטנת זווית בין חלקי גוף</li>
+                    <li><strong>Extension (פשיטה)</strong> - הגדלת זווית בין חלקי גוף</li>
+                    <li><strong>Dorsiflexion (כפיפה גבית)</strong> - הרמת אצבעות הרגל כלפי מעלה</li>
+                    <li><strong>Plantarflexion (כפיפת כפית)</strong> - לחיצת אצבעות הרגל כלפי מטה ("פוינט")</li>
+                </ul>
+                <p><strong>דוגמאות לתרגילים:</strong> Squat, Deadlift, Bicep Curl, Leg Press, ריצה</p>
+            </div>
