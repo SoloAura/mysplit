@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך פיזיולוגיה - מושגים בסיסיים</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 30px 0;
+            animation: fadeIn 1s ease;
+        }
+
+        .tab-button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .tab-button.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .card h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3::before {
+            content: "⚡";
+            font-size: 1.2em;
+        }
+
+        .definition {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-right: 5px solid #667eea;
+            margin: 15px 0;
+            animation: pulse 2s ease infinite;
+        }
+
+        .definition strong {
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .info-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-right: 4px solid #4CAF50;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-right: 4px solid #ff9800;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-right: 4px solid #4CAF50;
+        }
+
+        ul, ol {
+            margin: 15px 0 15px 30px;
+            line-height: 1.8;
+        }
+
+        li {
+            margin: 10px 0;
+            padding-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        .formula {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 2em;
+            margin-left: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 30px;
+            margin: 15px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .tab-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 מדריך פיזיולוגיה</h1>
+            <p>מושגים בסיסיים באנרגטיקה ספורטיבית</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('molecules')">💎 מולקולות אנרגיה</button>
+            <button class="tab-button" onclick="showTab('processes')">⚡ תהליכים אנרגטיים</button>
+            <button class="tab-button" onclick="showTab('lactate')">🔥 חומצת חלב</button>
+            <button class="tab-button" onclick="showTab('threshold')">📊 סף לקטט</button>
+            <button class="tab-button" onclick="showTab('comparison')">📋 טבלת השוואה</button>
+            <button class="tab-button" onclick="showTab('practical')">🎯 יישום מעשי</button>
+        </div>
+
+        <!-- מולקולות אנרגיה -->
+        <div id="molecules" class="content-section active">
+            <div class="card">
+                <h2><span class="icon">💎</span> מולקולות אנרגיה בסיסיות</h2>
+                
+                <h3>ATP - אדנוזין טריפוספט</h3>
+                <div class="definition">
+                    <strong>הגדרה:</strong> "הסוללה" של התא - מקור האנרגיה הישיר והיחיד
+                </div>
+                
+                <div class="info-box">
+                    <strong>מבנה:</strong>
+                    <ul>
+                        <li>אדנוזין (אדנין + ריבוז)</li>
+                        <li>3 קבוצות פוספט</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <strong>תפקיד:</strong><br>
+                    ✓ כיווץ שרירים<br>
+                    ✓ העברת אותות עצביים<br>
+                    ✓ בניית חלבונים<br>
+                    ✓ כל פעולה תאית!
+                </div>
+
+                <div class="warning-box">
+                    <strong>⚠️ חשוב לדעת:</strong> הכמות במנוחה מספיקה רק ל-2-3 שניות!
+                </div>
+
+                <h3>ADP - אדנוזין דיפוספט</h3>
+                <div class="definition">
+                    <strong>הגדרה:</strong> המולקולה "הריקה" - ATP אחרי שימוש
+                </div>
+
+                <div class="formula">
+                    ATP → ADP + Pi + אנרגיה 💥
+                </div>
+
+                <h3>CrP - קריאטין פוספט</h3>
+                <div class="definition">
+                    <strong>הגדרה:</strong> מטעין מהיר של ATP
+                </div>
+
+                <div class="info-box">
+                    <strong>עובדות חשובות:</strong>
+                    <ul>
+                        <li>ריכוז פי 3-4 מ-ATP</li>
+                        <li>מספיק ל-10 שניות נוספות</li>
+                        <li>המקור המיידי בתחילת כל מאמץ</li>
+                    </ul>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%">ATP 30%</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%">CrP 100%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- תהליכים אנרגטיים -->
+        <div id="processes" class="content-section">
+            <div class="card">
+                <h2><span class="icon">⚡</span> תהליכים אנרגטיים</h2>
+
+                <h3>תהליך פוספוגני - אנאירובי אלקטי</h3>
+                <div class="definition">
+                    <strong>המהיר ביותר!</strong> ללא חמצן, ללא חומצת חלב
+                </div>
+
+                <div class="info-box">
+                    <strong>מאפיינים:</strong>
+                    <ul>
+                        <li>⏱️ משך: 0-10 שניות</li>
+                        <li>⚡ מהירות: מקסימלית</li>
+                        <li>💪 דוגמאות: ספרינט 100 מ', קפיצה לגובה</li>
+                    </ul>
+                </div>
+
+                <div class="formula">
+                    CrP + ADP → ATP + Cr 🔄
+                </div>
+
+                <h3>תהליך גליקוליטי - אנאירובי לקטי</h3>
+                <div class="definition">
+                    <strong>מהיר אבל...</strong> יוצר חומצת חלב!
+                </div>
+
+                <div class="warning-box">
+                    <strong>מאפיינים:</strong>
+                    <ul>
+                        <li>⏱️ משך: 10 שניות - 2 דקות</li>
+                        <li>🔥 רווח: 2 ATP בלבד</li>
+                        <li>🏃 דוגמאות: 400-800 מטר</li>
+                        <li>⚠️ בעיה: צריבה בשרירים!</li>
+                    </ul>
+                </div>
+
+                <h3>תהליך אירובי</h3>
+                <div class="definition">
+                    <strong>היעיל ביותר!</strong> עם חמצן, ללא חומצת חלב
+                </div>
+
+                <div class="success-box">
+                    <strong>מאפיינים:</strong>
+                    <ul>
+                        <li>⏱️ משך: מעל 2 דקות (יכול שעות!)</li>
+                        <li>💎 רווח: 36-38 ATP - פי 18!</li>
+                        <li>🏃 דוגמאות: מרתון, רכיבה, שחייה</li>
+                        <li>✓ יתרונות: אין עייפות מהירה</li>
+                    </ul>
+                </div>
+
+                <div class="formula">
+                    גלוקוז + חמצן → 36 ATP + CO₂ + H₂O 💧
+                </div>
+            </div>
+        </div>
+
+        <!-- חומצת חלב -->
+        <div id="lactate" class="content-section">
+            <div class="card">
+                <h2><span class="icon">🔥</span> חומצת חלב (לקטט)</h2>
+
+                <div class="definition">
+                    <strong>הגדרה:</strong> תוצר של גליקוליזה אנאירובית - הסיבה ל"צריבה" בשרירים
+                </div>
+
+                <h3>מתי נוצרת?</h3>
+                <div class="warning-box">
+                    <ul>
+                        <li>כשהמאמץ עצים מדי</li>
+                        <li>חומצה פירובית לא מספיקה להיכנס למיטוכונדריה</li>
+                        <li>מעל סף חומצת החלב</li>
+                    </ul>
+                </div>
+
+                <h3>השפעות חיוביות 😊</h3>
+                <div class="success-box">
+                    <ul>
+                        <li>✓ מקור אנרגיה לרקמות אחרות</li>
+                        <li>✓ ניתן למחזור לגלוקוז (מעגל קורי)</li>
+                        <li>✓ אינדיקטור לעצימות האימון</li>
+                    </ul>
+                </div>
+
+                <h3>השפעות שליליות 😣</h3>
+                <div class="warning-box">
+                    <ul>
+                        <li>✗ כאבי שרירים</li>
+                        <li>✗ הפרעה לכיווץ השריר</li>
+                        <li>✗ עלייה בחומציות</li>
+                        <li>✗ תחושת עייפות</li>
+                    </ul>
+                </div>
+
+                <h3>דרכי סילוק</h3>
+                <div class="info-box">
+                    <ol>
+                        <li><strong>בופר בדם</strong> - נטרול מיידי</li>
+                        <li><strong>העברה לרקמות</strong> - שימוש מחדש</li>
+                        <li><strong>מעגל קורי</strong> - הפיכה לגלוקוז בכבד</li>
+                    </ol>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%">רמת חומצת חלב במאמץ בינוני</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- סף לקטט -->
+        <div id="threshold" class="content-section">
+            <div class="card">
+                <h2><span class="icon">📊</span> סף חומצת החלב (OBLA)</h2>
+
+                <div class="definition">
+                    <strong>Onset of Blood Lactate Accumulation</strong><br>
+                    הקצב המרבי ללא הצטברות דרסטית של חומצת חלב
+                </div>
+
+                <h3>מהו הסף?</h3>
+                <div class="info-box">
+                    <ul>
+                        <li>📊 בדרך כלל: 4 מילימול/ליטר</li>
+                        <li>📈 מתרחש ב: 60-85% מצח"מ</li>
+                        <li>🎯 תלוי ברמת האימון</li>
+                    </ul>
+                </div>
+
+                <h3>מתחת לסף 👍</h3>
+                <div class="success-box">
+                    <strong>ייצור = סילוק</strong>
+                    <ul>
+                        <li>⏰ ניתן להחזיק שעות</li>
+                        <li>💪 אימון אירובי יעיל</li>
+                        <li>😊 ללא עייפות מהירה</li>
+                    </ul>
+                </div>
+
+                <h3>מעל הסף 👎</h3>
+                <div class="warning-box">
+                    <strong>ייצור > סילוק</strong>
+                    <ul>
+                        <li>⚠️ הצטברות מהירה</li>
+                        <li>⏱️ עייפות תוך דקות</li>
+                        <li>🔥 צריבה בשרירים</li>
+                    </ul>
+                </div>
+
+                <h3>שיפור הסף באימון</h3>
+                <div class="success-box">
+                    <strong>תוצאות אימון אירובי:</strong>
+                    <ul>
+                        <li>📈 עלייה ביכולת הסילוק</li>
+                        <li>📊 הסף באחוזים גבוהים יותר מצח"מ</li>
+                        <li>🏃 יכולת לרוץ מהר יותר ללא חומצת חלב</li>
+                        <li>💪 פחות תלות במערכת אנאירובית</li>
+                    </ul>
+                </div>
+
+                <div class="highlight">
+                    🎯 מאומן = סף גבוה יותר = ביצועים טובים יותר!
+                </div>
+            </div>
+        </div>
+
+        <!-- טבלת השוואה -->
+        <div id="comparison" class="content-section">
+            <div class="card">
+                <h2><span class="icon">📋</span> טבלת השוואה - כל המערכות</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>מאפיין</th>
+                            <th>פוספוגני 💨</th>
+                            <th>אנאירובי לקטי 🔥</th>
+                            <th>אירובי 💪</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>חמצן</strong></td>
+                            <td>❌ לא</td>
+                            <td>❌ לא</td>
+                            <td>✅ כן</td>
+                        </tr>
+                        <tr>
+                            <td><strong>מהירות</strong></td>
+                            <td>⚡⚡⚡ מהירה מאוד</td>
+                            <td>⚡⚡ מהירה</td>
+                            <td>⚡ איטית</td>
+                        </tr>
+                        <tr>
+                            <td><strong>כמות ATP</strong></td>
+                            <td>מעטה</td>
+                            <td>2 ATP</td>
+                            <td>36-38 ATP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>משך</strong></td>
+                            <td>0-10 שניות</td>
+                            <td>10 שניות - 2 דקות</td>
+                            <td>מעל 2 דקות</td>
+                        </tr>
+                        <tr>
+                            <td><strong>חומצת חלב</strong></td>
+                            <td>❌ אין</td>
+                            <td>✅ יש</td>
+                            <td>❌ אין</td>
+                        </tr>
+                        <tr>
+                            <td><strong>דוגמאות</strong></td>
+                            <td>100 מ' 🏃</td>
+                            <td>400-800 מ' 🏃‍♂️</td>
+                            <td>מרתון 🏃‍♀️</td>
+                        </tr>
+                        <tr>
+                            <td><strong>התאוששות</strong></td>
+                            <td>2-3 דקות</td>
+                            <td>20-60 דקות</td>
+                            <td>עד 48 שעות</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight" style="text-align: center; margin-top: 30px; font-size: 1.3em;">
+                    💡 הגוף תמיד משתמש בכל המערכות ביחד - השאלה רק מי דומיננטי!
+                </div>
+            </div>
+        </div>
+
+        <!-- יישום מעשי -->
+        <div id="practical" class="content-section">
+            <div class="card">
+                <h2><span class="icon">🎯</span> יישום מעשי</h2>
+
+                <h3>איך לדעת באיזה מסלול אתה?</h3>
+
+                <div class="success-box">
+                    <strong>😌 נשימה רגועה, יכול לדבר</strong><br>
+                    → אירובי - המשך כך!
+                </div>
+
+                <div class="info-box">
+                    <strong>😤 נשימה כבדה, קשה לדבר</strong><br>
+                    → סף חומצת חלב - זה מאמץ!
+                </div>
+
+                <div class="warning-box">
+                    <strong>🔥 צריבה בשרירים, נשימה קשה מאוד</strong><br>
+                    → אנאירובי לקטי - לא תחזיק הרבה זמן!
+                </div>
+
+                <div class="definition">
+                    <strong>💨 התפוצצות קצרה</strong><br>
+                    → פוספוגני - מקסימום 10 שניות!
+                </div>
+
+                <h3>זמני התאוששות</h3>
+                <div class="info-box">
+                    <ul>
+                        <li>⚡ <strong>פוספוגני:</strong> 2-3 דקות (חידוש CrP)</li>
+                        <li>🔥 <strong>אנאירובי לקטי:</strong> 20-60 דקות (סילוק חומצת חלב)</li>
+                        <li>💪 <strong>אירובי:</strong> עד 48 שעות (חידוש גליקוגן מלא)</li>
+                    </ul>
+                </div>
+
+                <h3>טיפים לאימון</h3>
+                <div class="success-box">
+                    <strong>✅ לשיפור כוח:</strong>
+                    <ul>
+                        <li>מאמצים קצרים ועצימים (5-10 שניות)</li>
+                        <li>מנוחה מלאה בין סטים (2-3 דקות)</li>
+                        <li>דגש על CrP</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <strong>✅ לשיפור מהירות:</strong>
+                    <ul>
+                        <li>אינטרוולים (30-60 שניות)</li>
+                        <li>מנוחה חלקית (1-2 דקות)</li>
+                        <li>עבודה על סבילות לחומצת חלב</li>
+                    </ul>
+                </div>
+
+                <div class="success-box">
+                    <strong>✅ לשיפור סבולת:</strong>
+                    <ul>
+                        <li>מאמצים ארוכים (מעל 20 דקות)</li>
+                        <li>מתחת לסף חומצת חלב</li>
+                        <li>פיתוח המערכת האירובית</li>
+                    </ul>
+                </div>
+
+                <div class="highlight" style="margin-top: 30px; padding: 20px; text-align: center;">
+                    <span class="emoji">🎓</span>
+                    <strong>זכור: הבנת המערכות האנרגטיות = אימון חכם ויעיל!</strong>
+                    <span class="emoji">💪</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // הסתרת כל התכנים
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // הסרת הדגשה מכל הכפתורים
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // הצגת התוכן הנבחר
+            document.getElementById(tabName).classList.add('active');
+
+            // הדגשת הכפתור הנבחר
+            event.target.classList.add('active');
+
+            // גלילה חלקה למעלה
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // אנימציה לעמודות התקדמות
+        window.addEventListener('load', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
